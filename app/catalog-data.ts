@@ -36,6 +36,9 @@ export type PilotCatalog = {
   products: Product[];
 };
 
+const publicAsset = (path: string) =>
+  `${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}${path}`;
+
 const source = [
   ['veterinaria','Veterinaria','VetCare','🐾','Salud y bienestar','Cuidado, salud y bienestar para tus mascotas.','#087f76','#ffbd59'],
   ['calzado','Calzado','Pisada+','👟','Comercio y moda','Comodidad, diseño y actitud en cada paso.','#d65338','#ffd6bf'],
@@ -87,11 +90,11 @@ const source = [
 export const rubros: Rubro[] = source.map((item, index) => ({
   id: item[0], name: item[1], brand: item[2], icon: item[3], family: item[4],
   tagline: item[5], color: item[6], accent: item[7],
-  reference: `/references/${String(index + 1).padStart(2, '0')}.jpeg`,
+  reference: publicAsset(`/references/${String(index + 1).padStart(2, '0')}.jpeg`),
   ready: ['calzado', 'dental', 'canchas', 'ferreteria'].includes(item[0]),
 }));
 
-const photo = (name: string) => `/images/${name}-hero.png`;
+const photo = (name: string) => publicAsset(`/images/${name}-hero.png`);
 
 export const pilotCatalogs: Record<string, PilotCatalog> = {
   calzado: {

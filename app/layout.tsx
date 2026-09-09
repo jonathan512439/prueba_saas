@@ -6,6 +6,8 @@ export const metadata: Metadata = {
   description: 'Demostración visual de catálogos digitales para comercios, servicios y reservas.',
 };
 
+export const dynamic = 'force-static';
+
 export default function RootLayout({
   children,
 }: Readonly<{
