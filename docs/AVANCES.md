@@ -17,14 +17,16 @@
 
 ## Publicación GitHub Pages
 
-- Estado: configurada el 2026-09-09.
+- Estado: publicada y validada el 2026-09-09.
 - Repositorio: `jonathan512439/prueba_saas`.
 - Rama de publicación: `master`.
 - Workflow: `.github/workflows/deploy-pages.yml`.
 - Build: Node.js 22, `npm ci`, `npm run build:pages`.
 - Artefacto: `pages-dist/` con HTML hidratable, recursos `_next`, imágenes y referencias.
-- URL prevista: `https://jonathan512439.github.io/prueba_saas/`.
+- URL pública: `https://jonathan512439.github.io/prueba_saas/`.
 - Validaciones locales: lint correcto y build de Pages correcto.
+- Validaciones en producción: documento HTML, hoja de estilos, JavaScript e imagen principal responden con HTTP 200.
+- Prueba funcional en navegador: directorio de 45 rubros, navegación al rubro Calzado y catálogo con cuatro productos, sin errores de consola.
 
 ## Próximas fases
 
