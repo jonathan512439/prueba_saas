@@ -209,9 +209,13 @@
 
 ## Mejora visual — Patrones temáticos por rubro — 2026-09-10
 
-- Estado: implementada y validada; publicación en curso.
+- Estado: implementada, validada y publicada en GitHub Pages y Sites.
+- Commit funcional: `d206afc` (`Add themed icon patterns to catalogs`).
+- Workflow de Pages: ejecución `34457604492`, completada correctamente.
+- Sites: versión 5 publicada correctamente en el proyecto existente `Catálogouno`.
 - Alcance: los 45 catálogos personalizados, tanto en portada como en ficha de producto o servicio.
 - Motivos: combinación del icono principal del rubro con los iconos de sus categorías para que cada fondo sea reconocible y específico.
 - Composición: retícula compacta de iconos, variación controlada de rotación y escala, baja opacidad y color suavizado.
 - Legibilidad: patrón no interactivo ubicado detrás del contenido; encabezados, tarjetas de producto, avisos y navegación mantienen superficies opacas.
 - Responsive: densidad y opacidad ajustadas para escritorio y teléfono sin añadir desplazamiento lateral.
+- Validación: lint, compilación de producción, paquete estático para Pages y ambos despliegues completados correctamente.
