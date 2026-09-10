@@ -191,7 +191,10 @@
 
 ## Mejora visual — Alimentos y consumo / Comercio y moda — 2026-09-10
 
-- Estado: implementada; validación y publicación en curso.
+- Estado: implementada, validada y publicada en GitHub Pages y Sites.
+- Commit funcional: `10de2fb` (`Refresh food and fashion catalog design`).
+- Workflow de Pages: ejecución `34452612509`, completada correctamente.
+- Sites: versión 4 publicada correctamente en el proyecto existente `Catálogouno`.
 - Alcance: Licorería, Pastelería, Minimarket, Restaurante, Calzado, Cajas americanas, Deportes y Moda.
 - Objetivo: acercar las portadas y fichas a las referencias móviles originales con una presentación más fresca, comercial y fotográfica.
 - Portadas: encabezado más compacto, reseña de Maps integrada, buscador elevado, banner fotográfico enmarcado y CTA tipo píldora.
@@ -201,3 +204,5 @@
 - Fichas: fotografía ampliada, panel de información superpuesto, selectores táctiles, especificaciones en cuadrícula y acciones inferiores más claras.
 - Responsive: composición sin marco en teléfonos y presentación tipo dispositivo en pantallas amplias.
 - Funciones conservadas: búsqueda, categorías, favoritos, carrito, variantes, cantidad, fechas cuando corresponden, WhatsApp y reseña simulada de Google Maps.
+- Validación: lint, compilación estática para Pages y compilación de producción para Sites completadas correctamente.
+- Verificación pública: la portada de GitHub Pages responde con HTTP 200 y el despliegue privado de Sites finalizó con estado correcto.
