@@ -578,6 +578,396 @@
   background: #fff8d8;
 }
 
+/* Veterinary: a visibly different care-first catalog, still using the shared SaaS markup. */
+.site-shell .reference-stage.catalog-premium.premium-clinical {
+  --premium-page: #edf8f6;
+  --premium-surface: #fff;
+  --premium-ink: #083b3a;
+  --premium-muted: #587573;
+  --premium-radius: 22px;
+  --action: #08ad98;
+  background:
+    radial-gradient(circle at 100% 8%, #8fe4d557 0 16%, transparent 38%),
+    linear-gradient(180deg, #e4f7f3 0%, #f6fbfa 48%, #edf8f6 100%);
+}
+
+.site-shell .reference-stage.catalog-premium.premium-clinical .catalog-icon-pattern {
+  z-index: 0;
+  opacity: .085;
+  filter: grayscale(.12) saturate(.9);
+}
+
+.site-shell .reference-stage.catalog-premium.premium-clinical .reference-phone > :not(.catalog-icon-pattern) {
+  z-index: 1;
+}
+
+.site-shell .reference-stage.catalog-premium.premium-clinical .reference-header {
+  background: linear-gradient(135deg, #063f3e 0%, #075e59 58%, #087f76 100%);
+  color: #fff;
+  border-bottom: 0;
+  box-shadow: 0 12px 34px #073f3a2b;
+}
+
+.site-shell .reference-stage.catalog-premium.premium-clinical .reference-brand > span {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 8px 22px #002d2a4a;
+}
+
+.site-shell .reference-stage.catalog-premium.premium-clinical .maps-review-button.is-header {
+  border-color: #ffffff24;
+  background: #ffffff14;
+  color: #fff;
+  box-shadow: none;
+}
+
+.site-shell .reference-stage.catalog-premium.premium-clinical .maps-review-button.is-header .maps-review-copy small,
+.site-shell .reference-stage.catalog-premium.premium-clinical .maps-review-button.is-header .maps-review-stars {
+  color: #d7ffef;
+}
+
+.site-shell .reference-stage.catalog-premium.premium-clinical .reference-search {
+  border: 0;
+  background: #fff;
+  box-shadow: 0 9px 28px #003a352e;
+}
+
+.site-shell .reference-stage.catalog-premium.premium-clinical .reference-hero {
+  order: 2;
+  height: clamp(410px, 112vw, 490px);
+  margin: 12px;
+  border-radius: 30px;
+  box-shadow: 0 22px 52px #06463e30;
+}
+
+.site-shell .reference-stage.catalog-premium.premium-clinical .reference-hero > img {
+  object-position: 58% center;
+}
+
+.site-shell .reference-stage.catalog-premium.premium-clinical .reference-hero > div {
+  background: linear-gradient(0deg, #032e2cf2 0%, #063d3bc4 42%, #063d3b29 78%, transparent);
+}
+
+.site-shell .reference-stage.catalog-premium.premium-clinical .reference-hero article::before {
+  content: 'VETCARE · SALUD ANIMAL';
+  display: inline-flex;
+  margin-bottom: 10px;
+  padding: 6px 10px;
+  border: 1px solid #ffffff3b;
+  border-radius: 999px;
+  background: #ffffff16;
+  color: #bfffee;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: .13em;
+  backdrop-filter: blur(10px);
+}
+
+.site-shell .reference-stage.catalog-premium.premium-clinical .reference-hero h1 {
+  max-width: 360px;
+  font-size: clamp(36px, 10.5vw, 48px);
+  font-weight: 850;
+  letter-spacing: -2px;
+}
+
+.site-shell .reference-stage.catalog-premium.premium-clinical .reference-hero button {
+  color: #063b38;
+  background: #b9ffe7;
+  box-shadow: 0 12px 28px #001f1d55;
+}
+
+.site-shell .reference-stage.catalog-premium.premium-clinical .vet-care-panel {
+  order: 3;
+  margin: 3px 12px 4px;
+  padding: 17px;
+  border: 1px solid #d2ece7;
+  border-radius: 24px;
+  background: #fffffff2;
+  box-shadow: 0 15px 40px #0b514817;
+  backdrop-filter: blur(12px);
+}
+
+.site-shell .reference-stage.catalog-premium.premium-clinical .vet-care-heading {
+  display: grid;
+  grid-template-columns: 42px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.site-shell .reference-stage.catalog-premium.premium-clinical .vet-care-heading > span {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  color: #fff;
+  background: #087f76;
+}
+
+.site-shell .reference-stage.catalog-premium.premium-clinical .vet-care-heading svg {
+  width: 22px;
+}
+
+.site-shell .reference-stage.catalog-premium.premium-clinical .vet-care-heading div {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.site-shell .reference-stage.catalog-premium.premium-clinical .vet-care-heading small {
+  color: #6a827f;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.site-shell .reference-stage.catalog-premium.premium-clinical .vet-care-heading b {
+  font-size: 16px;
+  letter-spacing: -.3px;
+}
+
+.site-shell .reference-stage.catalog-premium.premium-clinical .vet-care-heading em {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 8px;
+  border-radius: 999px;
+  color: #087f4d;
+  background: #e0f9eb;
+  font-size: 9px;
+  font-style: normal;
+  font-weight: 900;
+}
+
+.site-shell .reference-stage.catalog-premium.premium-clinical .vet-care-heading em i {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #14b86a;
+  box-shadow: 0 0 0 4px #14b86a19;
+}
+
+.site-shell .reference-stage.catalog-premium.premium-clinical .vet-care-actions {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.site-shell .reference-stage.catalog-premium.premium-clinical .vet-care-actions button {
+  min-width: 0;
+  min-height: 114px;
+  padding: 12px 8px 9px;
+  border: 1px solid #dceeea;
+  border-radius: 17px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-content: start;
+  gap: 3px;
+  color: #124b48;
+  background: #f5fbfa;
+  text-align: left;
+}
+
+.site-shell .reference-stage.catalog-premium.premium-clinical .vet-care-actions button > span {
+  grid-column: 1 / -1;
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 5px;
+  border-radius: 11px;
+  color: #087f76;
+  background: #dff5f0;
+}
+
+.site-shell .reference-stage.catalog-premium.premium-clinical .vet-care-actions button > span svg {
+  width: 18px;
+}
+
+.site-shell .reference-stage.catalog-premium.premium-clinical .vet-care-actions button > b {
+  grid-column: 1 / -1;
+  font-size: 11px;
+  line-height: 1.15;
+}
+
+.site-shell .reference-stage.catalog-premium.premium-clinical .vet-care-actions button > small {
+  min-width: 0;
+  overflow: hidden;
+  color: #718783;
+  font-size: 8px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.site-shell .reference-stage.catalog-premium.premium-clinical .vet-care-actions button > svg {
+  width: 12px;
+}
+
+.site-shell .reference-stage.catalog-premium.premium-clinical .vet-care-actions button.is-urgent {
+  color: #7c2828;
+  border-color: #f3d9d6;
+  background: #fff6f4;
+}
+
+.site-shell .reference-stage.catalog-premium.premium-clinical .vet-care-actions button.is-urgent > span {
+  color: #c84545;
+  background: #ffe5e1;
+}
+
+.site-shell .reference-stage.catalog-premium.premium-clinical .vet-hours {
+  width: 100%;
+  min-height: 48px;
+  margin-top: 10px;
+  padding: 8px 10px;
+  border: 0;
+  border-radius: 14px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 9px;
+  color: #fff;
+  background: linear-gradient(135deg, #075e59, #087f76);
+  text-align: left;
+}
+
+.site-shell .reference-stage.catalog-premium.premium-clinical .vet-hours > svg {
+  width: 20px;
+}
+
+.site-shell .reference-stage.catalog-premium.premium-clinical .vet-hours > span {
+  display: flex;
+  flex-direction: column;
+}
+
+.site-shell .reference-stage.catalog-premium.premium-clinical .vet-hours b {
+  font-size: 11px;
+}
+
+.site-shell .reference-stage.catalog-premium.premium-clinical .vet-hours small {
+  color: #c7eee8;
+  font-size: 9px;
+}
+
+.site-shell .reference-stage.catalog-premium.premium-clinical .reference-categories {
+  order: 4;
+  padding-block: 20px;
+}
+
+.site-shell .reference-stage.catalog-premium.premium-clinical .reference-categories span {
+  border-radius: 18px;
+  background: #fff;
+}
+
+.site-shell .reference-stage.catalog-premium.premium-clinical .reference-categories button.active span {
+  color: #fff;
+  border-color: #087f76;
+  background: #087f76;
+  box-shadow: 0 9px 22px #087f7640;
+}
+
+.site-shell .reference-stage.catalog-premium.premium-clinical .reference-products {
+  order: 5;
+}
+
+.site-shell .reference-stage.catalog-premium.premium-clinical .reference-section-title h2 {
+  color: #073f3d;
+  font-size: 27px;
+}
+
+.site-shell .reference-stage.catalog-premium.premium-clinical .reference-product-grid {
+  grid-template-columns: 1fr;
+}
+
+.site-shell .reference-stage.catalog-premium.premium-clinical .reference-product-grid article {
+  min-height: 166px;
+  display: grid;
+  grid-template-columns: 138px minmax(0, 1fr);
+  border: 1px solid #dcece8;
+  overflow: hidden;
+  box-shadow: 0 12px 32px #0d514813;
+}
+
+.site-shell .reference-stage.catalog-premium.premium-clinical .reference-product-image {
+  grid-column: 1;
+  height: 100%;
+  min-height: 166px;
+}
+
+.site-shell .reference-stage.catalog-premium.premium-clinical .reference-product-copy {
+  grid-column: 2;
+  min-height: 166px;
+  padding: 17px 15px;
+}
+
+.site-shell .reference-stage.catalog-premium.premium-clinical .reference-product-copy b {
+  min-height: auto;
+  padding-right: 20px;
+  font-size: 15px;
+}
+
+.site-shell .reference-stage.catalog-premium.premium-clinical .reference-product-copy small {
+  margin-block: 8px 13px;
+  white-space: normal;
+}
+
+.site-shell .reference-stage.catalog-premium.premium-clinical .reference-product-copy strong {
+  color: #087f76;
+  font-size: 19px;
+}
+
+.site-shell .reference-stage.catalog-premium.premium-clinical .reference-heart {
+  right: 9px;
+  top: 9px;
+}
+
+.site-shell .reference-stage.catalog-premium.premium-clinical .reference-mini-cart {
+  right: 12px;
+  bottom: 12px;
+  width: 36px;
+  height: 36px;
+  border-radius: 12px;
+}
+
+.site-shell .reference-stage.catalog-premium.premium-clinical .reference-secondary-banner {
+  border-radius: 25px;
+}
+
+.site-shell .reference-stage.catalog-premium.premium-clinical .reference-feature {
+  color: #083f3c;
+  border: 1px solid #cfe9e3;
+  background: #dcf5ef;
+}
+
+.site-shell .reference-stage.catalog-premium.premium-clinical .reference-nav {
+  order: 6;
+}
+
+.site-shell .reference-stage.catalog-premium.premium-clinical .reference-detail-bar {
+  color: #fff;
+  border: 0;
+  background: linear-gradient(135deg, #063f3e, #087f76);
+}
+
+.site-shell .reference-stage.catalog-premium.premium-clinical .reference-detail-bar button {
+  color: #fff;
+}
+
+.site-shell .reference-stage.catalog-premium.premium-clinical .reference-detail-copy {
+  border-radius: 28px 28px 0 0;
+}
+
+.site-shell .reference-stage.catalog-premium.premium-clinical .reference-location {
+  border: 1px solid #cfe9e3;
+  background: #e9f8f5;
+}
+
 @media (min-width: 800px) {
   .site-shell .reference-stage.catalog-premium {
     padding: 30px;
@@ -699,6 +1089,76 @@
 
   .site-shell .reference-stage.catalog-premium.premium-experience .reference-product-image {
     height: 280px;
+  }
+
+  .site-shell .reference-stage.catalog-premium.premium-clinical .reference-hero {
+    height: 520px;
+    margin: 16px 28px 0;
+    border-radius: 34px;
+  }
+
+  .site-shell .reference-stage.catalog-premium.premium-clinical .reference-hero article {
+    left: 58px;
+    width: 48%;
+  }
+
+  .site-shell .reference-stage.catalog-premium.premium-clinical .reference-hero h1 {
+    max-width: 610px;
+    font-size: clamp(54px, 5.4vw, 74px);
+  }
+
+  .site-shell .reference-stage.catalog-premium.premium-clinical .vet-care-panel {
+    margin: -38px 54px 8px;
+    padding: 22px;
+    border-radius: 28px;
+    box-shadow: 0 22px 54px #0b514829;
+  }
+
+  .site-shell .reference-stage.catalog-premium.premium-clinical .vet-care-panel {
+    display: grid;
+    grid-template-columns: minmax(230px, .7fr) minmax(500px, 1.6fr);
+    gap: 20px;
+    align-items: center;
+  }
+
+  .site-shell .reference-stage.catalog-premium.premium-clinical .vet-care-heading {
+    margin: 0;
+  }
+
+  .site-shell .reference-stage.catalog-premium.premium-clinical .vet-care-heading em {
+    grid-column: 2;
+    justify-self: start;
+  }
+
+  .site-shell .reference-stage.catalog-premium.premium-clinical .vet-care-actions button {
+    min-height: 102px;
+  }
+
+  .site-shell .reference-stage.catalog-premium.premium-clinical .vet-hours {
+    grid-column: 1 / -1;
+    margin: 0;
+  }
+
+  .site-shell .reference-stage.catalog-premium.premium-clinical .reference-categories {
+    padding-top: 26px;
+  }
+
+  .site-shell .reference-stage.catalog-premium.premium-clinical .reference-product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .site-shell .reference-stage.catalog-premium.premium-clinical .reference-product-grid article {
+    grid-template-columns: 210px minmax(0, 1fr);
+    min-height: 220px;
+  }
+
+  .site-shell .reference-stage.catalog-premium.premium-clinical .reference-product-image,
+  .site-shell .reference-stage.catalog-premium.premium-clinical .reference-product-copy {
+    min-height: 220px;
+  }
+
+  .site-shell .reference-stage.catalog-premium.premium-clinical .reference-product-image {
+    height: 100%;
   }
 
   .site-shell .reference-stage.catalog-premium .reference-secondary-banner {

@@ -3,16 +3,16 @@
 import { memo, useMemo, useState } from 'react';
 import type React from 'react';
 import {
-  ArrowLeft, CalendarDays, ChevronRight, CircleUserRound, Grid2X2, Heart,
+  ArrowLeft, CalendarDays, ChevronRight, CircleUserRound, Clock3, Grid2X2, Heart,
   Home, MapPin, Menu, MessageCircle, Search, Share2, ShieldCheck, ShoppingCart,
-  Star, X,
+  Star, Stethoscope, X,
 } from 'lucide-react';
 import type { PilotCatalog, Product, Rubro } from './catalog-data';
 import { MapsReviewButton } from './maps-review-button';
 
 type CartLine = { rubroId: string; productId: string; name: string; price: number; qty: number; variant: string };
 type CatalogMode = 'commerce' | 'appointment' | 'request' | 'parking';
-type CatalogVisualPreset = 'editorial' | 'gastronomic' | 'service' | 'technical' | 'experience' | 'friendly';
+type CatalogVisualPreset = 'editorial' | 'gastronomic' | 'service' | 'technical' | 'experience' | 'friendly' | 'clinical';
 type Theme = {
   darkHeader: boolean;
   mode: CatalogMode;
@@ -39,6 +39,7 @@ const premiumVisualPresets: Partial<Record<string, CatalogVisualPreset>> = {
   electronica: 'technical',
   hotel: 'experience',
   jugueteria: 'friendly',
+  veterinaria: 'clinical',
 };
 
 function catalogStageClass(rubroId: string) {
@@ -116,7 +117,7 @@ const themes: Record<string, Theme> = {
     nav: ['Inicio', 'Categorías', 'Buscar', 'Favoritos', 'Perfil'],
     categoryIcons: ['🩺', '💉', '🥣', '💊', '🛡️', '🦴'],
     feature: 'Agenda rápida y asesoría veterinaria',
-    optionLabel: 'Presentación o atención', primaryLabel: 'Consultar o reservar por WhatsApp', location: 'Clínica Zona Sur, La Paz', categoryFirst: true,
+    optionLabel: 'Presentación o atención', primaryLabel: 'Consultar o reservar por WhatsApp', location: 'Clínica Zona Sur, La Paz',
   },
   licoreria: {
     darkHeader: true, mode: 'commerce',
@@ -607,6 +608,9 @@ function ReferenceHome({ rubro, catalog, theme, favorites, cart, onFavorite, not
   const cartCount = cart.reduce((sum, line) => sum + line.qty, 0);
   const promo = secondaryPromos[rubro.id] ?? secondaryPromos.calzado;
   const promoProduct = catalog.products[1] ?? catalog.products[0];
+  const veterinaryConsultation = rubro.id === 'veterinaria'
+    ? catalog.products.find((product) => product.id === 'consulta-general') ?? catalog.products[0]
+    : undefined;
 
   return <main className={catalogStageClass(rubro.id)} style={{ '--ref': rubro.color, '--ref-accent': rubro.accent } as React.CSSProperties}>
     <section className={'reference-phone ' + (theme.categoryFirst ? 'categories-first' : '')}>
@@ -632,6 +636,26 @@ function ReferenceHome({ rubro, catalog, theme, favorites, cart, onFavorite, not
         <div />
         <article><h1>{theme.headline}</h1><p>{theme.copy}</p><button onClick={() => document.getElementById('productos-' + rubro.id)?.scrollIntoView({ behavior: 'smooth' })}>{theme.cta} <ChevronRight /></button></article>
       </section>
+
+      {rubro.id === 'veterinaria' && <section className="vet-care-panel" aria-label="Accesos rápidos de la clínica">
+        <div className="vet-care-heading">
+          <span><Stethoscope /></span>
+          <div><small>Cuidado sin esperas</small><b>¿Qué necesita tu mascota?</b></div>
+          <em><i /> Atendiendo</em>
+        </div>
+        <div className="vet-care-actions">
+          <button onClick={() => veterinaryConsultation && go('catalogo/' + rubro.id + '/item/' + veterinaryConsultation.id)}>
+            <span><CalendarDays /></span><b>Agendar consulta</b><small>Horarios para hoy</small><ChevronRight />
+          </button>
+          <button className="is-urgent" onClick={() => window.open('https://wa.me/59170000000?text=' + encodeURIComponent('Hola VetCare, necesito orientación para una urgencia veterinaria.'), '_blank', 'noopener,noreferrer')}>
+            <span><MessageCircle /></span><b>Urgencias 24/7</b><small>Orientación inmediata</small><ChevronRight />
+          </button>
+          <button onClick={() => window.open('https://maps.google.com', '_blank', 'noopener,noreferrer')}>
+            <span><MapPin /></span><b>Cómo llegar</b><small>Clínica Zona Sur</small><ChevronRight />
+          </button>
+        </div>
+        <button className="vet-hours" onClick={() => notify('Horario de atención: lunes a sábado de 08:00 a 20:00')}><Clock3 /><span><b>Abierto hoy</b><small>08:00–20:00 · atención con cita</small></span><ChevronRight /></button>
+      </section>}
 
       <section className="reference-products" id={'productos-' + rubro.id}>
         <div className="reference-section-title"><h2>{query ? 'Resultados para “' + query + '”' : theme.section}</h2><button onClick={() => setQuery('')}>Ver todo <ChevronRight /></button></div>
