@@ -13,23 +13,10 @@ import { MapsReviewButton } from './maps-review-button';
 type CartLine = { rubroId: string; productId: string; name: string; price: number; qty: number; variant: string };
 type CatalogMode = 'commerce' | 'appointment' | 'request' | 'parking';
 type CatalogVisualPreset = 'editorial' | 'gastronomic' | 'service' | 'technical' | 'experience' | 'friendly' | 'clinical';
-type PremiumQuickAction = {
-  icon: string;
-  label: string;
-  note: string;
-  behavior: 'item' | 'products' | 'whatsapp' | 'maps' | 'notify';
-  productIndex?: number;
-  message?: string;
-  urgent?: boolean;
-};
-type PremiumQuickConfig = {
-  icon: string;
-  eyebrow: string;
+type PremiumSchedule = {
   title: string;
+  hours: string;
   status: string;
-  stripTitle: string;
-  stripCopy: string;
-  actions: PremiumQuickAction[];
 };
 type Theme = {
   darkHeader: boolean;
@@ -60,69 +47,27 @@ const premiumVisualPresets: Partial<Record<string, CatalogVisualPreset>> = {
   veterinaria: 'clinical',
 };
 
-const premiumQuickConfigs: Record<string, PremiumQuickConfig> = {
+const premiumSchedules: Record<string, PremiumSchedule> = {
   moda: {
-    icon: '✨', eyebrow: 'Compra fácil', title: 'Encuentra tu estilo', status: 'Nuevos hoy',
-    stripTitle: 'Despachos disponibles', stripCopy: 'Pedidos confirmados hasta las 16:00',
-    actions: [
-      { icon: '📏', label: 'Guía de tallas', note: 'Encuentra tu medida', behavior: 'notify', message: 'Guía de tallas disponible por prenda' },
-      { icon: '🛍️', label: 'Nuevos ingresos', note: 'Colección actual', behavior: 'products' },
-      { icon: '🚚', label: 'Envíos', note: 'Consulta cobertura', behavior: 'notify', message: 'Envíos disponibles en La Paz y El Alto' },
-    ],
+    title: 'Horario de atención', hours: 'Lunes a sábado · 10:00–20:00', status: 'Abierto hoy',
   },
   restaurante: {
-    icon: '🍽️', eyebrow: 'Servicio rápido', title: '¿Qué se te antoja?', status: 'Cocina abierta',
-    stripTitle: 'Abierto hoy', stripCopy: 'Pedidos y reservas hasta las 22:30',
-    actions: [
-      { icon: '🛵', label: 'Pedir ahora', note: 'Elige tu plato', behavior: 'item', productIndex: 0 },
-      { icon: '📅', label: 'Reservar mesa', note: 'Confirma tu horario', behavior: 'whatsapp' },
-      { icon: '📍', label: 'Cómo llegar', note: 'Ver ubicación', behavior: 'maps' },
-    ],
+    title: 'Horario de cocina', hours: 'Todos los días · 12:00–22:30', status: 'Cocina abierta',
   },
   barberia: {
-    icon: '✂️', eyebrow: 'Tu próxima visita', title: 'Elige cómo atenderte', status: 'Citas hoy',
-    stripTitle: 'Horario disponible', stripCopy: 'Lunes a sábado · 09:00–20:00',
-    actions: [
-      { icon: '📅', label: 'Reservar cita', note: 'Horarios de hoy', behavior: 'item', productIndex: 0 },
-      { icon: '🪒', label: 'Ver servicios', note: 'Corte, barba y más', behavior: 'products' },
-      { icon: '📍', label: 'Cómo llegar', note: 'Abrir ubicación', behavior: 'maps' },
-    ],
+    title: 'Horario de citas', hours: 'Lunes a sábado · 09:00–20:00', status: 'Citas hoy',
   },
   electronica: {
-    icon: '⚡', eyebrow: 'Compra informada', title: 'Encuentra el equipo ideal', status: 'Soporte activo',
-    stripTitle: 'Retiro disponible', stripCopy: 'Confirma stock y recoge el mismo día',
-    actions: [
-      { icon: '⚖️', label: 'Comparar equipos', note: 'Revisa diferencias', behavior: 'notify', message: 'Comparador de características activado en modo demostración' },
-      { icon: '💬', label: 'Consultar stock', note: 'Respuesta rápida', behavior: 'whatsapp' },
-      { icon: '🛡️', label: 'Garantía', note: 'Compra protegida', behavior: 'notify', message: 'Todos los equipos incluyen información de garantía' },
-    ],
+    title: 'Horario de atención', hours: 'Lunes a sábado · 09:30–19:30', status: 'Abierto hoy',
   },
   hotel: {
-    icon: '🛎️', eyebrow: 'Tu estadía en un lugar', title: 'Planea tu próxima visita', status: 'Disponible',
-    stripTitle: 'Recepción 24 horas', stripCopy: 'Check-in desde las 14:00 · asistencia continua',
-    actions: [
-      { icon: '🛏️', label: 'Reservar habitación', note: 'Ver disponibilidad', behavior: 'item', productIndex: 0 },
-      { icon: '✨', label: 'Servicios', note: 'Todo lo incluido', behavior: 'products' },
-      { icon: '📍', label: 'Cómo llegar', note: 'Abrir ubicación', behavior: 'maps' },
-    ],
+    title: 'Recepción 24 horas', hours: 'Check-in desde las 14:00 · asistencia continua', status: 'Disponible',
   },
   jugueteria: {
-    icon: '🎁', eyebrow: 'El regalo indicado', title: 'Encuentra algo especial', status: 'Novedades',
-    stripTitle: 'Entregas disponibles', stripCopy: 'Compra hoy y coordina tu entrega',
-    actions: [
-      { icon: '🧒', label: 'Comprar por edad', note: 'Opciones recomendadas', behavior: 'notify', message: 'Filtro por edad activado en modo demostración' },
-      { icon: '🎁', label: 'Ideas de regalo', note: 'Descubre favoritos', behavior: 'item', productIndex: 0 },
-      { icon: '🚚', label: 'Envíos', note: 'Consulta cobertura', behavior: 'notify', message: 'Entrega coordinada disponible' },
-    ],
+    title: 'Horario de atención', hours: 'Lunes a sábado · 10:00–20:00', status: 'Abierto hoy',
   },
   veterinaria: {
-    icon: '🩺', eyebrow: 'Cuidado sin esperas', title: '¿Qué necesita tu mascota?', status: 'Atendiendo',
-    stripTitle: 'Abierto hoy', stripCopy: '08:00–20:00 · atención con cita',
-    actions: [
-      { icon: '📅', label: 'Agendar consulta', note: 'Horarios para hoy', behavior: 'item', productIndex: 3 },
-      { icon: '💬', label: 'Urgencias 24/7', note: 'Orientación inmediata', behavior: 'whatsapp', urgent: true },
-      { icon: '📍', label: 'Cómo llegar', note: 'Clínica Zona Sur', behavior: 'maps' },
-    ],
+    title: 'Horario de atención', hours: 'Lunes a sábado · 08:00–20:00', status: 'Atendiendo',
   },
 };
 
@@ -692,27 +637,7 @@ function ReferenceHome({ rubro, catalog, theme, favorites, cart, onFavorite, not
   const cartCount = cart.reduce((sum, line) => sum + line.qty, 0);
   const promo = secondaryPromos[rubro.id] ?? secondaryPromos.calzado;
   const promoProduct = catalog.products[1] ?? catalog.products[0];
-  const quickConfig = premiumQuickConfigs[rubro.id];
-  const runQuickAction = (action: PremiumQuickAction) => {
-    if (action.behavior === 'item') {
-      const product = catalog.products[action.productIndex ?? 0] ?? catalog.products[0];
-      if (product) go('catalogo/' + rubro.id + '/item/' + product.id);
-      return;
-    }
-    if (action.behavior === 'products') {
-      document.getElementById('productos-' + rubro.id)?.scrollIntoView({ behavior: 'smooth' });
-      return;
-    }
-    if (action.behavior === 'whatsapp') {
-      window.open('https://wa.me/59170000000?text=' + encodeURIComponent('Hola ' + rubro.brand + ', quisiera recibir más información.'), '_blank', 'noopener,noreferrer');
-      return;
-    }
-    if (action.behavior === 'maps') {
-      window.open('https://maps.google.com', '_blank', 'noopener,noreferrer');
-      return;
-    }
-    notify(action.message ?? 'Función disponible en modo demostración');
-  };
+  const schedule = premiumSchedules[rubro.id];
 
   return <main className={catalogStageClass(rubro.id)} style={{ '--ref': rubro.color, '--ref-accent': rubro.accent } as React.CSSProperties}>
     <section className={'reference-phone ' + (theme.categoryFirst ? 'categories-first' : '')}>
@@ -739,19 +664,16 @@ function ReferenceHome({ rubro, catalog, theme, favorites, cart, onFavorite, not
         <article><h1>{theme.headline}</h1><p>{theme.copy}</p><button onClick={() => document.getElementById('productos-' + rubro.id)?.scrollIntoView({ behavior: 'smooth' })}>{theme.cta} <ChevronRight /></button></article>
       </section>
 
-      {quickConfig && <section className="premium-quick-panel" aria-label={'Accesos rápidos de ' + rubro.brand}>
-        <div className="premium-quick-heading">
-          <span>{quickConfig.icon}</span>
-          <div><small>{quickConfig.eyebrow}</small><b>{quickConfig.title}</b></div>
-          <em><i /> {quickConfig.status}</em>
-        </div>
-        <div className="premium-quick-actions">
-          {quickConfig.actions.map((action) => <button key={action.label} className={action.urgent ? 'is-urgent' : ''} onClick={() => runQuickAction(action)}>
-            <span>{action.icon}</span><b>{action.label}</b><small>{action.note}</small><ChevronRight />
-          </button>)}
-        </div>
-        <button className="premium-quick-strip" onClick={() => notify(quickConfig.stripTitle + ': ' + quickConfig.stripCopy)}><Clock3 /><span><b>{quickConfig.stripTitle}</b><small>{quickConfig.stripCopy}</small></span><ChevronRight /></button>
-      </section>}
+      {schedule && <button
+        className="premium-hours-strip"
+        onClick={() => notify(schedule.title + ': ' + schedule.hours)}
+        aria-label={schedule.title + '. ' + schedule.hours + '. ' + schedule.status}
+      >
+        <span className="premium-hours-icon"><Clock3 /></span>
+        <span className="premium-hours-copy"><b>{schedule.title}</b><small>{schedule.hours}</small></span>
+        <em><i /> {schedule.status}</em>
+        <ChevronRight />
+      </button>}
 
       <section className="reference-products" id={'productos-' + rubro.id}>
         <div className="reference-section-title"><h2>{query ? 'Resultados para “' + query + '”' : theme.section}</h2><button onClick={() => setQuery('')}>Ver todo <ChevronRight /></button></div>

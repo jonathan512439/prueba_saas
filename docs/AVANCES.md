@@ -293,3 +293,13 @@
 - Validación: linter y compilación estática para GitHub Pages completados sin errores.
 - GitHub: commit funcional `396a13ea82ed84dc83ec7e8f8868a73005063cc1`; workflow `Deploy GitHub Pages` #34517423163 completado correctamente.
 - Sites: versión privada 10 (`appgprj_6aa1d744bdb4819188d8cf7320cb2418~appgver_68e742c669e881919d900b59447e244e`) publicada correctamente.
+
+## Simplificación de información premium — 2026-09-10
+
+- Estado: implementada y validada; publicación en curso.
+- Alcance: Moda, Restaurante, Barbería, Electrónica, Hotel, Juguetería y Veterinaria.
+- Cambio: se retiran el encabezado contextual y las tres tarjetas de acciones rápidas de cada catálogo premium.
+- Horarios: se conserva una única franja compacta, visible y pulsable debajo del banner principal, con horario y estado del negocio.
+- Banner principal: mantiene su tamaño actual sin cambios, 220 px en móvil y 300 px en escritorio.
+- Patrones e imágenes: permanecen activos y sin reemplazos en todos los catálogos.
+- Validación: linter y compilación estática para GitHub Pages completados sin errores.
