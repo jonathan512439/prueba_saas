@@ -274,3 +274,20 @@
 - Validación: linter y compilación estática para GitHub Pages completados sin errores.
 - GitHub: commit funcional `31cbe62bb7d69ede34cffc425f5f25be28da9522`; workflow `Deploy GitHub Pages` #34513321620 completado correctamente.
 - Sites: versión privada 9 (`appgprj_6aa1d744bdb4819188d8cf7320cb2418~appgver_26f8ab7e1fa08191924b151f5d046c75`) publicada correctamente.
+
+## Información rápida en los siete catálogos premium — 2026-09-10
+
+- Estado: implementada y validada; publicación en curso.
+- Arquitectura: el bloque exclusivo de Veterinaria se reemplaza por un único componente configurable compartido.
+- Alcance: Moda, Restaurante, Barbería, Electrónica, Hotel, Juguetería y Veterinaria.
+- Estructura común: encabezado contextual, estado visible, tres acciones rápidas y franja informativa inferior.
+- Moda: guía de tallas, nuevos ingresos y cobertura de envíos.
+- Restaurante: pedido, reserva de mesa y ubicación.
+- Barbería: reserva de cita, servicios y ubicación.
+- Electrónica: comparación, consulta de stock y garantía.
+- Hotel: reserva, servicios y ubicación.
+- Juguetería: compra por edad, ideas de regalo y entregas.
+- Veterinaria: consulta, urgencias y ubicación, ahora usando el mismo componente.
+- Funcionalidad: las acciones navegan a productos, desplazan el catálogo, abren WhatsApp o Maps, o muestran retroalimentación simulada.
+- Patrones e imágenes: se conservan en todos los catálogos sin reemplazos.
+- Validación: linter y compilación estática para GitHub Pages completados sin errores.
