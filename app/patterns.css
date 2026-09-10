@@ -1,0 +1,65 @@
+/* Patrón ambiental de iconos por rubro */
+.reference-phone {
+  isolation: isolate;
+  background: color-mix(in srgb, var(--ref) 2.6%, #fff);
+}
+
+.catalog-icon-pattern {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  display: grid;
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+  grid-auto-rows: 42px;
+  align-content: start;
+  padding: 10px 6px;
+  overflow: hidden;
+  pointer-events: none;
+  user-select: none;
+  opacity: 0.065;
+  filter: grayscale(0.28) saturate(0.72);
+  mix-blend-mode: multiply;
+}
+
+.catalog-icon-pattern span {
+  display: grid;
+  place-items: center;
+  font-size: 22px;
+  line-height: 1;
+  transform: rotate(-7deg) scale(0.96);
+}
+
+.catalog-icon-pattern span:nth-child(4n + 2) {
+  transform: translateY(7px) rotate(7deg) scale(0.9);
+}
+
+.catalog-icon-pattern span:nth-child(6n + 3) {
+  transform: translateY(-3px) rotate(-13deg) scale(1.06);
+}
+
+.catalog-icon-pattern span:nth-child(9n) {
+  opacity: 0.68;
+}
+
+.reference-header,
+.reference-detail-bar,
+.reference-nav,
+.reference-product-grid article,
+.reference-feature,
+.reference-empty,
+.reference-detail-actions {
+  background-color: #fff;
+}
+
+@media (max-width: 520px) {
+  .catalog-icon-pattern {
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+    grid-auto-rows: 40px;
+    padding-inline: 4px;
+    opacity: 0.058;
+  }
+
+  .catalog-icon-pattern span {
+    font-size: 21px;
+  }
+}

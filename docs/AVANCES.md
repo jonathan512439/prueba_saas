@@ -206,3 +206,12 @@
 - Funciones conservadas: búsqueda, categorías, favoritos, carrito, variantes, cantidad, fechas cuando corresponden, WhatsApp y reseña simulada de Google Maps.
 - Validación: lint, compilación estática para Pages y compilación de producción para Sites completadas correctamente.
 - Verificación pública: la portada de GitHub Pages responde con HTTP 200 y el despliegue privado de Sites finalizó con estado correcto.
+
+## Mejora visual — Patrones temáticos por rubro — 2026-09-10
+
+- Estado: implementada y validada; publicación en curso.
+- Alcance: los 45 catálogos personalizados, tanto en portada como en ficha de producto o servicio.
+- Motivos: combinación del icono principal del rubro con los iconos de sus categorías para que cada fondo sea reconocible y específico.
+- Composición: retícula compacta de iconos, variación controlada de rotación y escala, baja opacidad y color suavizado.
+- Legibilidad: patrón no interactivo ubicado detrás del contenido; encabezados, tarjetas de producto, avisos y navegación mantienen superficies opacas.
+- Responsive: densidad y opacidad ajustadas para escritorio y teléfono sin añadir desplazamiento lateral.

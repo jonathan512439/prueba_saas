@@ -1,6 +1,6 @@
 'use client';
 
-import { useMemo, useState } from 'react';
+import { memo, useMemo, useState } from 'react';
 import type React from 'react';
 import {
   ArrowLeft, CalendarDays, ChevronRight, CircleUserRound, Grid2X2, Heart,
@@ -28,6 +28,22 @@ type Theme = {
   location?: string;
   categoryFirst?: boolean;
 };
+
+const PATTERN_ICON_COUNT = 240;
+
+const CatalogIconPattern = memo(function CatalogIconPattern({
+  primaryIcon,
+  categoryIcons,
+}: {
+  primaryIcon: string;
+  categoryIcons: string[];
+}) {
+  const motifs = [primaryIcon, ...categoryIcons].filter(Boolean);
+
+  return <div className="catalog-icon-pattern" aria-hidden="true">
+    {Array.from({ length: PATTERN_ICON_COUNT }, (_, index) => <span key={index}>{motifs[index % motifs.length]}</span>)}
+  </div>;
+});
 
 const themes: Record<string, Theme> = {
   calzado: {
@@ -579,6 +595,7 @@ function ReferenceHome({ rubro, catalog, theme, favorites, cart, onFavorite, not
 
   return <main className={'reference-stage reference-' + rubro.id} style={{ '--ref': rubro.color, '--ref-accent': rubro.accent } as React.CSSProperties}>
     <section className={'reference-phone ' + (theme.categoryFirst ? 'categories-first' : '')}>
+      <CatalogIconPattern primaryIcon={rubro.icon} categoryIcons={theme.categoryIcons} />
       <header className={'reference-header ' + (theme.darkHeader ? 'is-dark' : '')}>
         <div className="reference-brand-row">
           <button onClick={() => notify('Menú disponible')} aria-label="Abrir menú"><Menu /></button>
@@ -645,6 +662,7 @@ function ReferenceDetail({ rubro, product, theme, favorite, onFavorite, onAdd, n
 
   return <main className={'reference-stage reference-' + rubro.id} style={{ '--ref': rubro.color, '--ref-accent': rubro.accent } as React.CSSProperties}>
     <section className="reference-phone reference-detail">
+      <CatalogIconPattern primaryIcon={rubro.icon} categoryIcons={theme.categoryIcons} />
       <header className="reference-detail-bar">
         <button onClick={() => go('catalogo/' + rubro.id)} aria-label="Volver"><ArrowLeft /></button>
         <b>Detalle {detailNoun}</b>
