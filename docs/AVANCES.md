@@ -47,7 +47,9 @@
 
 ## Fase 2 — Segundo grupo de rubros — 2026-09-09
 
-- Estado: implementación visual completada; pendiente únicamente la publicación de este avance.
+- Estado: implementada y publicada en GitHub Pages.
+- Commit funcional: `8224c48` (`Implement phase 2 catalog experiences`).
+- Workflow de publicación verificado: ejecución `34423635185`, estado exitoso.
 - Alcance: Veterinaria, Licorerías / bebidas, Servicios del hogar, Computación / servicio técnico, Seguridad / cámaras / alarmas, Carpinterías / metalúrgicas, Estacionamientos / garajes y Consultorías / servicios profesionales.
 - Referencias auditadas: láminas 01, 03, 04, 05, 06, 07, 08 y 09.
 - Activos: ocho banners fotográficos originales generados para esta fase, sin marcas ni textos incrustados, reutilizados con encuadres diferenciados en las tarjetas.
