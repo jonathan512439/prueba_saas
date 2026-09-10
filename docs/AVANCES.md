@@ -169,7 +169,9 @@
 
 ## Fase 7 — Tecnología, consumo, belleza, moda y gastronomía — 2026-09-10
 
-- Estado: implementada; validación y publicación en curso.
+- Estado: implementada, validada y publicada en GitHub Pages; actualización privada de Sites pendiente por acceso del conector.
+- Commit funcional: `295c19e` (`Complete all 45 catalog experiences`).
+- Workflow de Pages: ejecución `34450556505`, completada correctamente.
 - Rubros: Electrónica / tecnología, Minimarket / abarrotes, Barbería / belleza, Moda / boutique y Restaurante / comida.
 - Referencias auditadas: láminas 39, 40, 42, 43 y 45; las láminas 41 y 44 ya correspondían a los pilotos Dental y Ferretería.
 - Activos: cinco banners fotográficos originales, horizontales, sin marcas ni texto incrustado y con zona segura para titulares HTML.
@@ -182,4 +184,7 @@
 - Flujos: comparación y compra para Electrónica; carrito rápido para Minimarket; agenda para Barbería; talla y color para Moda; menú configurable para Restaurante.
 - Diseño: cinco identidades visuales, encabezado con reseña simulada de Google Maps, categorías específicas, dos banners, grilla densa y fichas detalladas.
 - Navegación funcional: portada, categorías, búsqueda, favoritos o pedidos, ficha, selección de opciones, cantidad y contacto por WhatsApp.
+- Validación: lint, compilación de producción y paquete estático de Pages completados correctamente.
+- Verificación pública: portada y los cinco banners de la fase responden con HTTP 200.
+- Sites: el manifiesto conserva el proyecto existente, pero el conector actual respondió `project_not_found`; no se creó otro proyecto para evitar duplicados.
 - Cobertura acumulada: 45 de 45 rubros personalizados; catálogo multirrubro completo.
