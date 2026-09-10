@@ -91,12 +91,112 @@ export const rubros: Rubro[] = source.map((item, index) => ({
   id: item[0], name: item[1], brand: item[2], icon: item[3], family: item[4],
   tagline: item[5], color: item[6], accent: item[7],
   reference: publicAsset(`/references/${String(index + 1).padStart(2, '0')}.jpeg`),
-  ready: ['calzado', 'dental', 'canchas', 'ferreteria'].includes(item[0]),
+  ready: [
+    'veterinaria', 'calzado', 'licoreria', 'servicios-hogar', 'computacion',
+    'seguridad', 'carpinteria', 'estacionamientos', 'consultoria',
+    'dental', 'canchas', 'ferreteria',
+  ].includes(item[0]),
 }));
 
 const photo = (name: string) => publicAsset(`/images/${name}-hero.png`);
 
 export const pilotCatalogs: Record<string, PilotCatalog> = {
+  veterinaria: {
+    id: 'veterinaria', hero: photo('veterinaria'), kicker: 'Salud y bienestar animal',
+    heroTitle: 'Atención confiable para cada patita.',
+    heroCopy: 'Productos, vacunas y servicios veterinarios con orientación profesional.',
+    categories: ['Todo', 'Consultas', 'Vacunas', 'Alimentos', 'Farmacia', 'Antiparasitarios', 'Accesorios'], action: 'Agendar atención',
+    products: [
+      { id:'vacuna-quintuple', name:'Vacuna quíntuple canina', subtitle:'Protección esencial · laboratorio certificado', price:120, rating:4.9, stock:'Disponible hoy', badge:'Recomendado', image:photo('veterinaria'), variants:['10:00','11:30','16:00'], attributes:[['Especie','Perro'],['Etapa','Cachorro / adulto'],['Dosis','1 ml'],['Aplicación','Subcutánea'],['Edad recomendada','Desde 6 semanas'],['Requiere valoración','Sí']] },
+      { id:'pro-plan-puppy', name:'Alimento Pro Puppy 3 kg', subtitle:'Nutrición completa para cachorros', price:165, rating:4.8, stock:'14 bolsas', image:photo('veterinaria'), variants:['3 kg','7.5 kg'], attributes:[['Especie','Perro'],['Etapa','Cachorro'],['Presentación','Bolsa sellada'],['Marca','NutriPet'],['Proteína','Alta'],['Origen','Importado']] },
+      { id:'pipeta-gato', name:'Pipeta antipulgas para gato', subtitle:'Protección mensual · uso externo', price:48, rating:4.7, stock:'22 unidades', badge:'Más vendido', image:photo('veterinaria'), variants:['Hasta 4 kg','4 a 8 kg'], attributes:[['Especie','Gato'],['Duración','30 días'],['Aplicación','Tópica'],['Edad recomendada','Desde 8 semanas'],['Presentación','1 pipeta'],['Precaución','Uso veterinario']] },
+      { id:'consulta-general', name:'Consulta veterinaria general', subtitle:'Valoración clínica y plan de cuidado', price:90, rating:4.9, stock:'5 horarios hoy', image:photo('veterinaria'), variants:['09:30','14:00','17:30'], attributes:[['Duración','30 min'],['Profesional','Dra. Camila Rojas'],['Incluye','Valoración completa'],['Especies','Perros y gatos'],['Modalidad','Presencial'],['Sede','Zona Sur']] },
+    ],
+  },
+  licoreria: {
+    id: 'licoreria', hero: photo('licoreria'), kicker: 'Sabores para celebrar',
+    heroTitle: 'Brinda sin límites.',
+    heroCopy: 'Selección premium, stock actualizado y entrega rápida para cada ocasión.',
+    categories: ['Todo', 'Cervezas', 'Vinos', 'Whisky', 'Ron', 'Gin', 'Sin alcohol'], action: 'Ver ofertas',
+    products: [
+      { id:'whisky-reserva', name:'Whisky Reserva Black 750 ml', subtitle:'Whisky escocés premium · 12 años', price:245, rating:4.8, stock:'En stock', badge:'Listo para regalo', image:photo('licoreria'), variants:['750 ml','1 litro'], attributes:[['Marca','North Crown'],['Tipo','Blended Scotch'],['Graduación','40% Alc./Vol.'],['Origen','Escocia'],['Sabor','Madera, vainilla y humo'],['Servicio','Con hielo / solo']] },
+      { id:'vino-malbec', name:'Vino Gran Altura Malbec', subtitle:'Tinto seco · cosecha especial', price:135, rating:4.7, stock:'18 botellas', image:photo('licoreria'), variants:['750 ml','Caja × 6'], attributes:[['Variedad','Malbec'],['Graduación','13.5% Alc./Vol.'],['Origen','Mendoza'],['Temperatura','16–18 °C'],['Maridaje','Carnes y quesos'],['Presentación','750 ml']] },
+      { id:'cerveza-artesanal', name:'Pack cerveza artesanal', subtitle:'Selección IPA, Lager y Amber', price:92, rating:4.6, stock:'11 packs', badge:'Oferta', image:photo('licoreria'), variants:['Pack × 6','Pack × 12'], attributes:[['Tipo','Cerveza artesanal'],['Graduación','4.8–6.2%'],['Origen','Bolivia'],['Presentación','330 ml'],['Servicio','4–7 °C'],['Incluye','3 variedades']] },
+      { id:'gin-botanico', name:'Gin Botánico Andino 700 ml', subtitle:'Enebro, cítricos y hierbas de altura', price:198, rating:4.9, stock:'7 botellas', image:photo('licoreria'), variants:['700 ml','Kit gin tonic'], attributes:[['Tipo','London Dry'],['Graduación','42% Alc./Vol.'],['Origen','Bolivia'],['Notas','Cítricas y herbales'],['Servicio','Gin tonic'],['Restricción','Venta +18']] },
+    ],
+  },
+  'servicios-hogar': {
+    id: 'servicios-hogar', hero: photo('servicios-hogar'), kicker: 'Profesionales verificados',
+    heroTitle: 'Tu hogar en buenas manos.',
+    heroCopy: 'Soluciones rápidas, seguras y garantizadas para cada necesidad.',
+    categories: ['Todo', 'Limpieza', 'Plomería', 'Electricidad', 'Reparaciones', 'Mantenimiento', 'Jardinería'], action: 'Solicitar servicio',
+    products: [
+      { id:'fugas-agua', name:'Reparación de fugas de agua', subtitle:'Lavamanos, fregaderos y tuberías', price:80, rating:4.9, stock:'Hoy · programable', badge:'Más solicitado', image:photo('servicios-hogar'), variants:['Hoy 14:00','Hoy 17:00','Mañana 09:00'], attributes:[['Categoría','Plomería'],['Tipo','Reparación'],['Tiempo estimado','1–2 horas'],['Incluye','Revisión + mano de obra'],['Garantía','30 días'],['Zona','La Paz y El Alto']] },
+      { id:'limpieza-profunda', name:'Limpieza profunda de casa', subtitle:'Cocina, baños y áreas comunes', price:150, rating:4.8, stock:'3 cupos mañana', image:photo('servicios-hogar'), variants:['Departamento','Casa'], attributes:[['Categoría','Limpieza'],['Duración','4–6 horas'],['Personal','2 profesionales'],['Materiales','Incluidos'],['Modalidad','A domicilio'],['Garantía','Satisfacción']] },
+      { id:'tablero-electrico', name:'Revisión de tablero eléctrico', subtitle:'Diagnóstico y corrección segura', price:120, rating:4.8, stock:'Disponible esta semana', badge:'Certificado', image:photo('servicios-hogar'), variants:['Diagnóstico','Diagnóstico + reparación'], attributes:[['Categoría','Electricidad'],['Duración','1–3 horas'],['Técnico','Certificado'],['Incluye','Informe de revisión'],['Materiales','Según necesidad'],['Zona','Área urbana']] },
+      { id:'mantenimiento-integral', name:'Mantenimiento integral', subtitle:'Pequeñas reparaciones en una visita', price:190, rating:4.7, stock:'Agenda abierta', image:photo('servicios-hogar'), variants:['Media jornada','Jornada completa'], attributes:[['Categoría','Mantenimiento'],['Cobertura','Hasta 5 tareas'],['Modalidad','A domicilio'],['Herramientas','Incluidas'],['Repuestos','No incluidos'],['Garantía','30 días']] },
+    ],
+  },
+  computacion: {
+    id: 'computacion', hero: photo('computacion'), kicker: 'Tecnología y soporte',
+    heroTitle: 'Equipos que impulsan tus ideas.',
+    heroCopy: 'Laptops, componentes y servicio técnico con información completa.',
+    categories: ['Todo', 'Laptops', 'Computadoras', 'Componentes', 'Monitores', 'Accesorios', 'Servicio técnico'], action: 'Ver productos',
+    products: [
+      { id:'core-i5-12400f', name:'Procesador Core i5-12400F', subtitle:'12ª generación · alto rendimiento', price:1850, rating:4.8, stock:'En stock', badge:'Más vendido', image:photo('computacion'), variants:['Box','Tray + cooler'], attributes:[['Marca','Intel'],['Modelo','i5-12400F'],['Núcleos / hilos','6 / 12'],['Frecuencia','Hasta 4.4 GHz'],['Socket','LGA 1700'],['Garantía','12 meses']] },
+      { id:'laptop-ideapad', name:'Laptop ProBook 15 Ryzen 5', subtitle:'8 GB RAM · SSD 512 GB · 15.6”', price:3950, rating:4.7, stock:'6 unidades', image:photo('computacion'), variants:['8 GB RAM','16 GB RAM'], attributes:[['Procesador','Ryzen 5 7530U'],['Memoria','8 GB DDR4'],['Almacenamiento','512 GB SSD'],['Pantalla','15.6” Full HD'],['Sistema','Windows 11'],['Garantía','1 año']] },
+      { id:'mouse-master', name:'Mouse inalámbrico Master 3S', subtitle:'Precisión profesional y conexión múltiple', price:720, rating:4.9, stock:'9 unidades', badge:'Premium', image:photo('computacion'), variants:['Grafito','Gris claro'], attributes:[['Conectividad','Bluetooth / USB'],['Sensor','8.000 DPI'],['Batería','Hasta 70 días'],['Compatibilidad','Windows / macOS'],['Incluye','Cable USB-C'],['Condición','Nuevo']] },
+      { id:'diagnostico-pc', name:'Diagnóstico técnico de PC', subtitle:'Hardware, software y reporte completo', price:100, rating:4.8, stock:'Turnos disponibles', image:photo('computacion'), variants:['En taller','A domicilio'], attributes:[['Tipo','Servicio técnico'],['Duración','24–48 horas'],['Incluye','Informe técnico'],['Equipos','Laptop / PC'],['Repuestos','Cotización aparte'],['Garantía','15 días']] },
+    ],
+  },
+  seguridad: {
+    id: 'seguridad', hero: photo('seguridad'), kicker: 'Seguridad para tu espacio',
+    heroTitle: 'Protege lo que más te importa.',
+    heroCopy: 'Cámaras, alarmas y soluciones instaladas por especialistas.',
+    categories: ['Todo', 'Cámaras IP', 'Cámaras analógicas', 'Alarmas', 'Videoporteros', 'Grabadores', 'Accesorios'], action: 'Ver catálogo',
+    products: [
+      { id:'camara-4mp', name:'Cámara IP Bullet 4 MP', subtitle:'Visión nocturna · exterior IP67', price:920, rating:4.8, stock:'En stock', badge:'Más vendido', image:photo('seguridad'), variants:['2.8 mm','3.6 mm'], attributes:[['Marca','SecureVision'],['Modelo','SV-B4P'],['Resolución','4 MP (2560 × 1440)'],['Visión nocturna','Hasta 30 m'],['Conectividad','PoE / RJ45'],['Resistencia','IP67']] },
+      { id:'camara-wifi', name:'Cámara interior WiFi 2K', subtitle:'Audio bidireccional y seguimiento', price:350, rating:4.7, stock:'15 unidades', image:photo('seguridad'), variants:['Unidad','Pack × 2'], attributes:[['Tipo','Cámara IP PTZ'],['Resolución','2K'],['Conectividad','WiFi 2.4 GHz'],['Almacenamiento','microSD / nube'],['Funciones','Movimiento + audio'],['Uso','Interior']] },
+      { id:'kit-alarma', name:'Kit de alarma residencial Pro', subtitle:'Central, sensores y sirena inalámbrica', price:1950, rating:4.9, stock:'Instalación disponible', badge:'Kit completo', image:photo('seguridad'), variants:['8 zonas','16 zonas'], attributes:[['Tipo','Alarma inalámbrica'],['Incluye','Central + 6 sensores'],['Conectividad','WiFi / 4G'],['Control','App móvil'],['Batería','Respaldo 12 h'],['Garantía','2 años']] },
+      { id:'videoportero', name:'Videoportero inteligente 7”', subtitle:'Pantalla táctil y apertura remota', price:1250, rating:4.8, stock:'8 unidades', image:photo('seguridad'), variants:['1 monitor','2 monitores'], attributes:[['Resolución','1080p'],['Pantalla','7 pulgadas'],['Conectividad','Cableada / WiFi'],['Visión nocturna','Sí'],['Uso','Casa / oficina'],['Incluye','Fuente y soporte']] },
+    ],
+  },
+  carpinteria: {
+    id: 'carpinteria', hero: photo('carpinteria'), kicker: 'Hecho a medida',
+    heroTitle: 'Fabricamos ideas que duran.',
+    heroCopy: 'Madera, metal y acabados personalizados para transformar tu espacio.',
+    categories: ['Todo', 'Muebles', 'Puertas', 'Closets', 'Cocinas', 'Estructuras', 'Proyectos'], action: 'Solicitar cotización',
+    products: [
+      { id:'escritorio-industrial', name:'Escritorio industrial a medida', subtitle:'Madera natural y estructura metálica', price:850, rating:4.9, stock:'Fabricación 5–7 días', badge:'Recomendado', image:photo('carpinteria'), variants:['Roble','Nogal','Negro mate','Gris'], attributes:[['Material','MDF + estructura metálica'],['Acabado','Mate / sellado protector'],['Medidas','120 × 60 × 75 cm'],['Personalización','Sí, por encargo'],['Uso','Oficina / estudio'],['Garantía','3 meses']] },
+      { id:'puerta-reforzada', name:'Puerta metálica reforzada', subtitle:'Seguridad, diseño y acabado premium', price:1450, rating:4.8, stock:'Cotización previa', image:photo('carpinteria'), variants:['Negro mate','Madera nogal','Gris grafito'], attributes:[['Material','Acero calibre 18'],['Medidas','A requerimiento'],['Acabado','Pintura electrostática'],['Incluye','Marco y cerradura'],['Instalación','Opcional'],['Tiempo','7–10 días']] },
+      { id:'mueble-lavabo', name:'Mueble bajo lavabo', subtitle:'Almacenamiento compacto resistente a humedad', price:680, rating:4.7, stock:'Agenda abierta', image:photo('carpinteria'), variants:['Blanco','Roble claro','Nogal'], attributes:[['Material','Melamina RH'],['Medidas','80 × 45 × 60 cm'],['Acabado','Canto PVC'],['Personalización','Sí'],['Instalación','Incluida'],['Tiempo','5 días']] },
+      { id:'cocina-integral', name:'Cocina integral personalizada', subtitle:'Diseño, fabricación e instalación', price:5800, rating:4.9, stock:'Visita técnica requerida', badge:'Proyecto', image:photo('carpinteria'), variants:['Melamina premium','Madera sólida','Mixta'], attributes:[['Tipo','Proyecto integral'],['Medidas','Según ambiente'],['Incluye','Diseño 3D'],['Herrajes','Cierre suave'],['Fabricación','20–30 días'],['Garantía','12 meses']] },
+    ],
+  },
+  estacionamientos: {
+    id: 'estacionamientos', hero: photo('estacionamientos'), kicker: 'Disponible 24/7',
+    heroTitle: 'Tu vehículo en buenas manos.',
+    heroCopy: 'Espacios seguros, accesibles y siempre cerca de tu destino.',
+    categories: ['Todo', 'Autos', 'Motos', 'Bicicletas', 'Camionetas', 'Techados', '24 horas'], action: 'Ver ubicaciones',
+    products: [
+      { id:'centro-empresarial', name:'Estacionamiento Centro Empresarial', subtitle:'Centro · seguro, cómodo y techado', price:15, rating:4.8, stock:'32 espacios libres', badge:'Disponible', image:photo('estacionamientos'), variants:['1 hora','3 horas','Día completo'], attributes:[['Ubicación','Av. San Martín 123, Centro'],['Tipo','Techado'],['Capacidad','150 vehículos'],['Altura máxima','2.2 metros'],['Horario','24 horas, todos los días'],['Pago','Efectivo, QR, tarjeta']] },
+      { id:'garaje-historico', name:'Garaje Centro Histórico', subtitle:'A dos cuadras de Plaza Murillo', price:15, rating:4.7, stock:'12 espacios libres', image:photo('estacionamientos'), variants:['1 hora','Media jornada','Día completo'], attributes:[['Zona','Centro Histórico'],['Tipo','Cubierto'],['Seguridad','Cámaras + guardia'],['Horario','06:00–23:00'],['Vehículos','Autos / motos'],['Reserva','Opcional']] },
+      { id:'parqueo-norte', name:'Parqueo Norte 24/7', subtitle:'Acceso controlado y lavado opcional', price:12, rating:4.6, stock:'45 espacios libres', badge:'Mejor tarifa', image:photo('estacionamientos'), variants:['1 hora','Noche','Mensual'], attributes:[['Zona','Zona Norte'],['Tipo','Al aire libre'],['Capacidad','90 vehículos'],['Seguridad','Control QR'],['Servicio','Lavado opcional'],['Pago','QR / efectivo']] },
+      { id:'equipetrol', name:'Parking Equipetrol', subtitle:'Ingreso amplio para camionetas', price:20, rating:4.9, stock:'8 espacios libres', image:photo('estacionamientos'), variants:['1 hora','3 horas','Día completo'], attributes:[['Zona','Equipetrol'],['Tipo','Techado'],['Altura máxima','2.5 metros'],['Accesibilidad','Sí'],['Horario','24/7'],['Seguridad','Cámaras + seguro']] },
+    ],
+  },
+  consultoria: {
+    id: 'consultoria', hero: photo('consultoria'), kicker: 'Profesionales verificados',
+    heroTitle: 'Ideas, estrategias y resultados.',
+    heroCopy: 'Servicios profesionales para impulsar el crecimiento de tu empresa.',
+    categories: ['Todo', 'Estrategia', 'Finanzas', 'Marketing', 'Recursos Humanos', 'Tecnología', 'Legal'], action: 'Ver servicios',
+    products: [
+      { id:'transformacion-digital', name:'Consultoría en transformación digital', subtitle:'Procesos, tecnología y cultura organizacional', price:1500, rating:4.9, stock:'Agenda disponible', badge:'Más solicitado', image:photo('consultoria'), variants:['Presencial','Online','Híbrida'], attributes:[['Área','Transformación digital'],['Duración','4–8 semanas'],['Incluye','Diagnóstico + plan + asesoría'],['Público','PyMEs / empresas'],['Consultor','Equipo certificado'],['Soporte','30 días posteriores']] },
+      { id:'planificacion', name:'Planificación estratégica empresarial', subtitle:'Define el rumbo de tu negocio con expertos', price:1200, rating:4.8, stock:'3 cupos este mes', image:photo('consultoria'), variants:['Online','Presencial'], attributes:[['Área','Estrategia'],['Tipo','Asesoría'],['Duración','4 sesiones'],['Incluye','Plan de acción'],['Público','Empresas / emprendedores'],['Materiales','Plantillas e informe']] },
+      { id:'asesoria-contable', name:'Asesoría contable y tributaria', subtitle:'Obligaciones claras y decisiones seguras', price:800, rating:4.8, stock:'Inicio inmediato', image:photo('consultoria'), variants:['Mensual','Trimestral'], attributes:[['Área','Finanzas'],['Modalidad','Online / presencial'],['Incluye','Revisión + reporte'],['Cobertura','Todo el país'],['Equipo','Contadores certificados'],['Seguimiento','Mensual']] },
+      { id:'marketing-growth', name:'Estrategia de marketing Growth', subtitle:'Adquisición, conversión y medición', price:1350, rating:4.7, stock:'2 cupos disponibles', badge:'Nuevo', image:photo('consultoria'), variants:['Plan esencial','Plan integral'], attributes:[['Área','Marketing'],['Duración','6 semanas'],['Incluye','Auditoría + roadmap'],['Entregables','Informe y tablero'],['Público','PyMEs'],['Soporte','45 días']] },
+    ],
+  },
   calzado: {
     id: 'calzado', hero: photo('calzado'), kicker: 'Nueva colección · 2026',
     heroTitle: 'Comodidad que se mueve contigo.',

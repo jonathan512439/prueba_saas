@@ -10,8 +10,10 @@ import {
 import type { PilotCatalog, Product, Rubro } from './catalog-data';
 
 type CartLine = { rubroId: string; productId: string; name: string; price: number; qty: number; variant: string };
+type CatalogMode = 'commerce' | 'appointment' | 'request' | 'parking';
 type Theme = {
   darkHeader: boolean;
+  mode: CatalogMode;
   headline: string;
   copy: string;
   cta: string;
@@ -19,11 +21,17 @@ type Theme = {
   nav: string[];
   categoryIcons: string[];
   feature: string;
+  optionLabel?: string;
+  primaryLabel?: string;
+  contactLabel?: string;
+  location?: string;
+  categoryFirst?: boolean;
 };
 
 const themes: Record<string, Theme> = {
   calzado: {
     darkHeader: true,
+    mode: 'commerce',
     headline: 'ESTILO QUE CAMINA CONTIGO',
     copy: 'Comodidad, diseño y actitud en cada paso.',
     cta: 'Ver colección',
@@ -34,6 +42,7 @@ const themes: Record<string, Theme> = {
   },
   canchas: {
     darkHeader: true,
+    mode: 'appointment',
     headline: 'EL LUGAR IDEAL PARA TU PASIÓN',
     copy: 'Canchas de calidad, reservas al instante y la mejor experiencia.',
     cta: 'Reservar ahora',
@@ -41,9 +50,11 @@ const themes: Record<string, Theme> = {
     nav: ['Inicio', 'Categorías', 'Buscar', 'Favoritos', 'Perfil'],
     categoryIcons: ['⚽', '🥅', '🏀', '🏐', '🎾', '🏆'],
     feature: 'Horarios disponibles en tiempo real',
+    optionLabel: 'Horarios disponibles', primaryLabel: 'Reservar por WhatsApp', location: 'Zona Sur, La Paz',
   },
   dental: {
     darkHeader: false,
+    mode: 'appointment',
     headline: 'Una sonrisa más saludable para ti',
     copy: 'Cuidamos tu salud bucal con profesionales especializados.',
     cta: 'Ver servicios',
@@ -51,9 +62,11 @@ const themes: Record<string, Theme> = {
     nav: ['Inicio', 'Servicios', 'Citas', 'Favoritos', 'Perfil'],
     categoryIcons: ['🦷', '⚙️', '😁', '✨', '🩺', '📅'],
     feature: 'Profesionales y agenda por fecha y hora',
+    optionLabel: 'Horarios disponibles', primaryLabel: 'Agendar por WhatsApp', location: 'Sede Calacoto, La Paz',
   },
   ferreteria: {
     darkHeader: false,
+    mode: 'commerce',
     headline: 'HERRAMIENTAS PARA GRANDES PROYECTOS',
     copy: 'Calidad, resistencia y confianza para cada trabajo.',
     cta: 'Ver catálogo',
@@ -61,6 +74,87 @@ const themes: Record<string, Theme> = {
     nav: ['Inicio', 'Categorías', 'Buscar', 'Pedidos', 'Perfil'],
     categoryIcons: ['🧰', '🧱', '🚰', '💡', '🦺', '🔩'],
     feature: 'Ficha técnica, stock y cotización rápida',
+    contactLabel: 'Cotizar por WhatsApp',
+  },
+  veterinaria: {
+    darkHeader: true, mode: 'request',
+    headline: 'ATENCIÓN CONFIABLE PARA TU MASCOTA',
+    copy: 'Productos, vacunas y servicios con orientación veterinaria.',
+    cta: 'Ver cuidados', section: 'Productos destacados',
+    nav: ['Inicio', 'Categorías', 'Buscar', 'Favoritos', 'Perfil'],
+    categoryIcons: ['🩺', '💉', '🥣', '💊', '🛡️', '🦴'],
+    feature: 'Agenda rápida y asesoría veterinaria',
+    optionLabel: 'Presentación o atención', primaryLabel: 'Consultar o reservar por WhatsApp', location: 'Clínica Zona Sur, La Paz', categoryFirst: true,
+  },
+  licoreria: {
+    darkHeader: true, mode: 'commerce',
+    headline: 'BRINDA SIN LÍMITES',
+    copy: 'Las mejores bebidas para cada ocasión.',
+    cta: 'Ver ofertas', section: 'Selección destacada',
+    nav: ['Inicio', 'Categorías', 'Ofertas', 'Pedidos', 'Perfil'],
+    categoryIcons: ['🍺', '🍷', '🥃', '🍹', '🍸', '🧊'],
+    feature: 'Venta responsable exclusiva para mayores de 18 años',
+    optionLabel: 'Selecciona una presentación', contactLabel: 'Pedir por WhatsApp',
+  },
+  'servicios-hogar': {
+    darkHeader: true, mode: 'request',
+    headline: 'TU HOGAR EN BUENAS MANOS',
+    copy: 'Profesionales verificados para cada necesidad.',
+    cta: 'Ver servicios', section: 'Servicios destacados',
+    nav: ['Inicio', 'Categorías', 'Buscar', 'Pedidos', 'Perfil'],
+    categoryIcons: ['🧹', '🔧', '⚡', '🛠️', '⚙️', '🌿'],
+    feature: 'Personal verificado, atención a domicilio y garantía',
+    optionLabel: 'Modalidad o disponibilidad', primaryLabel: 'Solicitar por WhatsApp', location: 'La Paz y zonas cercanas', categoryFirst: true,
+  },
+  computacion: {
+    darkHeader: true, mode: 'commerce',
+    headline: 'EQUIPOS QUE IMPULSAN TUS IDEAS',
+    copy: 'Laptops, PCs, accesorios y soporte técnico.',
+    cta: 'Ver productos', section: 'Más vendidos',
+    nav: ['Inicio', 'Categorías', 'Ofertas', 'Pedidos', 'Perfil'],
+    categoryIcons: ['💻', '🖥️', '🧩', '🖥', '🖱️', '🛠️'],
+    feature: 'Ficha técnica completa, garantía y soporte',
+    optionLabel: 'Selecciona una configuración', contactLabel: 'Cotizar por WhatsApp',
+  },
+  seguridad: {
+    darkHeader: true, mode: 'commerce',
+    headline: 'PROTEGE LO QUE MÁS TE IMPORTA',
+    copy: 'Cámaras, alarmas y soluciones para hogar y negocio.',
+    cta: 'Ver catálogo', section: 'Productos destacados',
+    nav: ['Inicio', 'Categorías', 'Ofertas', 'Pedidos', 'Perfil'],
+    categoryIcons: ['📹', '🎥', '🚨', '📟', '💾', '🔌'],
+    feature: 'Soporte técnico, instalación y garantía',
+    optionLabel: 'Selecciona una versión', contactLabel: 'Cotizar por WhatsApp',
+  },
+  carpinteria: {
+    darkHeader: true, mode: 'request',
+    headline: 'FABRICAMOS IDEAS QUE DURAN',
+    copy: 'Carpintería y metalurgia a tu medida.',
+    cta: 'Ver colecciones', section: 'Trabajos destacados',
+    nav: ['Inicio', 'Categorías', 'Buscar', 'Favoritos', 'Perfil'],
+    categoryIcons: ['🪑', '🚪', '🗄️', '🍽️', '🏗️', '📐'],
+    feature: 'Diseño a medida, materiales y acabados personalizados',
+    optionLabel: 'Acabado o material', primaryLabel: 'Pedir o cotizar por WhatsApp', categoryFirst: true,
+  },
+  estacionamientos: {
+    darkHeader: true, mode: 'parking',
+    headline: 'TU VEHÍCULO EN BUENAS MANOS',
+    copy: 'Espacios seguros, accesibles y siempre cerca.',
+    cta: 'Ver ubicaciones', section: 'Estacionamientos destacados',
+    nav: ['Inicio', 'Ubicaciones', 'Buscar', 'Mis reservas', 'Perfil'],
+    categoryIcons: ['🚗', '🏍️', '🚲', '🚚', '🏢', '🕐'],
+    feature: 'Vigilancia 24 horas, ubicación y disponibilidad real',
+    optionLabel: 'Tiempo de reserva', primaryLabel: 'Reservar este espacio', location: 'Ubicación verificada en el mapa', categoryFirst: true,
+  },
+  consultoria: {
+    darkHeader: true, mode: 'request',
+    headline: 'IDEAS · ESTRATEGIAS · RESULTADOS',
+    copy: 'Servicios profesionales para un futuro mejor.',
+    cta: 'Ver servicios', section: 'Servicios destacados',
+    nav: ['Inicio', 'Categorías', 'Buscar', 'Favoritos', 'Perfil'],
+    categoryIcons: ['📈', '💰', '📣', '👥', '💻', '⚖️'],
+    feature: 'Consultores verificados y asesoría personalizada',
+    optionLabel: 'Modalidad del servicio', primaryLabel: 'Solicitar servicio por WhatsApp', location: 'Atención en todo el país', categoryFirst: true,
   },
 };
 
@@ -103,7 +197,7 @@ function ReferenceHome({ rubro, catalog, theme, favorites, cart, onFavorite, not
   const cartCount = cart.reduce((sum, line) => sum + line.qty, 0);
 
   return <main className={'reference-stage reference-' + rubro.id} style={{ '--ref': rubro.color, '--ref-accent': rubro.accent } as React.CSSProperties}>
-    <section className="reference-phone">
+    <section className={'reference-phone ' + (theme.categoryFirst ? 'categories-first' : '')}>
       <header className={'reference-header ' + (theme.darkHeader ? 'is-dark' : '')}>
         <div className="reference-brand-row">
           <button onClick={() => notify('Menú disponible')} aria-label="Abrir menú"><Menu /></button>
@@ -141,7 +235,7 @@ function ReferenceHome({ rubro, catalog, theme, favorites, cart, onFavorite, not
   </main>;
 }
 
-function ReferenceDetail({ rubro, product, favorite, onFavorite, onAdd, notify }: {
+function ReferenceDetail({ rubro, product, theme, favorite, onFavorite, onAdd, notify }: {
   rubro: Rubro;
   product: Product;
   theme: Theme;
@@ -152,8 +246,10 @@ function ReferenceDetail({ rubro, product, favorite, onFavorite, onAdd, notify }
 }) {
   const [variant, setVariant] = useState(product.variants?.[0] ?? 'Estándar');
   const [qty, setQty] = useState(1);
-  const isSchedule = rubro.id === 'dental' || rubro.id === 'canchas';
-  const contactLabel = rubro.id === 'dental' ? 'Agendar por WhatsApp' : rubro.id === 'canchas' ? 'Reservar por WhatsApp' : 'Consultar por WhatsApp';
+  const isCommerce = theme.mode === 'commerce';
+  const showDate = theme.mode === 'appointment' || theme.mode === 'parking';
+  const detailNoun = theme.mode === 'parking' ? 'del estacionamiento' : theme.mode === 'commerce' ? 'del producto' : 'del servicio';
+  const contactLabel = theme.contactLabel ?? theme.primaryLabel ?? 'Consultar por WhatsApp';
   const contact = () => window.open('https://wa.me/59170000000?text=' + encodeURIComponent('Hola ' + rubro.brand + ', me interesa ' + product.name + ', opción ' + variant + '.'), '_blank', 'noopener,noreferrer');
   const share = async () => {
     if (navigator.share) await navigator.share({ title: product.name, url: window.location.href });
@@ -164,7 +260,7 @@ function ReferenceDetail({ rubro, product, favorite, onFavorite, onAdd, notify }
     <section className="reference-phone reference-detail">
       <header className="reference-detail-bar">
         <button onClick={() => go('catalogo/' + rubro.id)} aria-label="Volver"><ArrowLeft /></button>
-        <b>Detalle {isSchedule ? (rubro.id === 'dental' ? 'del servicio' : 'de la reserva') : 'del producto'}</b>
+        <b>Detalle {detailNoun}</b>
         <span>
           <button onClick={() => onFavorite(rubro.id, product.id)} aria-label="Favorito"><Heart fill={favorite ? 'currentColor' : 'none'} /></button>
           <button onClick={share} aria-label="Compartir"><Share2 /></button>
@@ -181,26 +277,26 @@ function ReferenceDetail({ rubro, product, favorite, onFavorite, onAdd, notify }
         <div className="reference-meta"><span><Star fill="currentColor" /> {product.rating} <small>(128 reseñas)</small></span><b>● {product.stock}</b></div>
         <p>Información clara y detallada para que elijas con confianza. Confirma disponibilidad antes de finalizar.</p>
 
-        {isSchedule && <div className="reference-location"><MapPin /><b>{rubro.id === 'dental' ? 'Sede Calacoto, La Paz' : 'Zona Sur, La Paz'}</b><button onClick={() => window.open('https://maps.google.com', '_blank', 'noopener,noreferrer')}>Ver mapa</button></div>}
+        {theme.location && <div className="reference-location"><MapPin /><b>{theme.location}</b><button onClick={() => window.open('https://maps.google.com', '_blank', 'noopener,noreferrer')}>Ver mapa</button></div>}
 
-        {isSchedule && <div className="reference-date"><b>Selecciona una fecha</b><div>{['Lun 15', 'Mar 16', 'Mié 17', 'Jue 18', 'Vie 19'].map((day, index) => <button key={day} className={index === 2 ? 'active' : ''} onClick={() => notify(day)}><CalendarDays />{day}</button>)}</div></div>}
+        {showDate && <div className="reference-date"><b>Selecciona una fecha</b><div>{['Lun 15', 'Mar 16', 'Mié 17', 'Jue 18', 'Vie 19'].map((day, index) => <button key={day} className={index === 2 ? 'active' : ''} onClick={() => notify(day)}><CalendarDays />{day}</button>)}</div></div>}
 
         <div className="reference-options">
-          <b>{isSchedule ? 'Horarios disponibles' : (rubro.id === 'calzado' ? 'Selecciona una talla' : 'Selecciona una opción')}</b>
+          <b>{theme.optionLabel ?? (rubro.id === 'calzado' ? 'Selecciona una talla' : 'Selecciona una opción')}</b>
           <div>{product.variants?.map((item) => <button key={item} className={variant === item ? 'active' : ''} onClick={() => setVariant(item)}>{item}</button>)}</div>
         </div>
 
         <div className="reference-specs">{product.attributes.map(([label, value]) => <div key={label}><span>{label}</span><b>{value}</b></div>)}</div>
 
-        {!isSchedule && <div className="reference-quantity"><span>Cantidad</span><div><button onClick={() => setQty((current) => Math.max(1, current - 1))}>−</button><b>{qty}</b><button onClick={() => setQty((current) => current + 1)}>+</button></div></div>}
+        {isCommerce && <div className="reference-quantity"><span>Cantidad</span><div><button onClick={() => setQty((current) => Math.max(1, current - 1))}>−</button><b>{qty}</b><button onClick={() => setQty((current) => current + 1)}>+</button></div></div>}
       </section>
 
       <footer className="reference-detail-actions">
         <button className="reference-primary" onClick={() => {
-          if (isSchedule) contact();
+          if (!isCommerce) contact();
           else onAdd({ rubroId: rubro.id, productId: product.id, name: product.name, price: product.price, qty, variant });
-        }}>{isSchedule ? contactLabel : <><ShoppingCart /> Agregar al carrito</>}</button>
-        {!isSchedule && <button className="reference-whatsapp" onClick={contact}><MessageCircle /> {contactLabel}</button>}
+        }}>{isCommerce ? <><ShoppingCart /> Agregar al carrito</> : contactLabel}</button>
+        {isCommerce && <button className="reference-whatsapp" onClick={contact}><MessageCircle /> {contactLabel}</button>}
       </footer>
     </section>
   </main>;

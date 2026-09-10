@@ -44,3 +44,16 @@
 - Estado al retomar: implementación y compilación local completadas.
 - Revisión visual final: portada y ficha de Calzado verificadas en navegador, con navegación funcional y sin errores de consola.
 - Estado de la corrección: lista para publicación en GitHub Pages.
+
+## Fase 2 — Segundo grupo de rubros — 2026-09-09
+
+- Estado: implementación visual completada; pendiente únicamente la publicación de este avance.
+- Alcance: Veterinaria, Licorerías / bebidas, Servicios del hogar, Computación / servicio técnico, Seguridad / cámaras / alarmas, Carpinterías / metalúrgicas, Estacionamientos / garajes y Consultorías / servicios profesionales.
+- Referencias auditadas: láminas 01, 03, 04, 05, 06, 07, 08 y 09.
+- Activos: ocho banners fotográficos originales generados para esta fase, sin marcas ni textos incrustados, reutilizados con encuadres diferenciados en las tarjetas.
+- Contenido: 32 fichas nuevas, cuatro por rubro, con precios en bolivianos, disponibilidad, calificación, variantes y atributos técnicos específicos.
+- Navegación: portada, buscador, categorías, favoritos, carrito cuando corresponde, ficha detallada, selector de opciones, mapa y contacto por WhatsApp.
+- Flujos por rubro: agenda o consulta veterinaria; compra responsable de bebidas; solicitud de visita domiciliaria; configuración y compra de tecnología; cotización e instalación de seguridad; acabados y cotización a medida; fecha y duración de parqueo; modalidad y solicitud de consultoría.
+- Fidelidad visual: cabeceras oscuras, categorías circulares, banners compactos, grillas densas de tres tarjetas, navegación móvil inferior y CTA principal adaptado al rubro.
+- Ajuste responsive: ancho móvil estabilizado, categorías con desplazamiento horizontal y tarjetas sin desbordamiento.
+- Verificación local: lint correcto, compilación estática correcta, servidor HTTP 200 y captura móvil revisada.
