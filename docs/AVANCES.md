@@ -98,3 +98,21 @@
 - Fidelidad visual: cabeceras oscuras, categorías circulares, paletas específicas, banners dobles, grillas densas y ficha detallada móvil.
 - Funciones conservadas: búsqueda, favoritos, carrito cuando corresponde, fechas, mapa, reseña simulada de Google Maps y contacto por WhatsApp.
 - Validación: análisis de código, compilación de producción y paquete estático de Pages completados correctamente.
+
+## Fase 4 — Comercio, experiencias, formación y propiedades — 2026-09-10
+
+- Estado: implementada; pendiente de publicación al iniciar este registro.
+- Rubros: Distribuidores mayoristas / B2B, Cerámicas / pisos / construcción, Salas de juego, Artesanías / personalizados, Turismo / tours, Educación / cursos, Inmobiliaria y Hotel / alojamiento.
+- Referencias auditadas: láminas 18 a 25.
+- Activos: ocho banners fotográficos originales, con composición horizontal y zona segura para titulares; el activo de Educación fue regenerado para eliminar rótulos incrustados.
+- Contenido: 32 fichas nuevas, cuatro por rubro, con precios en bolivianos, disponibilidad, calificaciones, opciones y atributos técnicos propios de cada actividad.
+- Mayoristas: SKU, presentación, pedido mínimo, stock, escalas por volumen, forma de pago y entrega.
+- Cerámicas: formato, rendimiento por caja, piezas, espesor, acabado, resistencia, uso y lote.
+- Entretenimiento y turismo: plataforma, duración, jugadores o cupos, horarios, inclusiones, dificultad, punto de encuentro y modalidad.
+- Artesanías: material, técnica, medidas, acabado, personalización, tiempo de fabricación y cuidados.
+- Educación: nivel, duración, modalidad, horario, docente, requisitos, cupos y certificación.
+- Inmobiliaria: operación, superficie, ambientes, servicios, expensas, documentación, amenidades y visita.
+- Hotel: huéspedes, camas, baño, desayuno, WiFi, parqueo, horarios, disponibilidad y cancelación.
+- Diseño: ocho paletas específicas, cabeceras oscuras, categorías circulares, doble banner, tarjetas densas y ficha móvil detallada.
+- Navegación funcional: portada, categorías, búsqueda, favoritos, pedidos o reservas, detalle, selectores, contacto por WhatsApp y reseña simulada de Google Maps.
+- Cobertura acumulada: 27 de 45 rubros personalizados; quedan 18 para las fases siguientes.
