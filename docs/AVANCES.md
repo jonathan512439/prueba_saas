@@ -160,8 +160,9 @@
 - Florería: ocasión, flores, paleta, tamaño, mensaje, complementos, preparación, fecha y hora de entrega.
 - Flujos: compra y configuración para Librería, Mueblería y Repuestos; programación por fecha para Pastelería y Florería.
 - Diseño: cinco identidades cromáticas, encabezado con reseña simulada de Google Maps, categorías específicas, dos banners, grilla densa y ficha detallada móvil.
-- Navegación prevista: portada, categorías, búsqueda, favoritos o pedidos, ficha, selección de opciones y contacto por WhatsApp.
+- Navegación funcional: portada, categorías, búsqueda, favoritos o pedidos, ficha, selección de opciones y contacto por WhatsApp.
 - Validación: lint, compilación de producción y paquete estático de Pages completados correctamente.
 - Verificación pública: portada y los cinco banners de la fase responden con HTTP 200.
+- Revisión visual en navegador: portada y ficha de Librería comprobadas en producción, con navegación por producto, variantes, especificaciones y CTAs visibles sin errores.
 - Sites: el manifiesto conserva el proyecto existente, pero el conector actual respondió `project_not_found`; no se creó otro proyecto para evitar duplicados.
 - Cobertura acumulada: 40 de 45 rubros personalizados; quedan 5 para la Fase 7.
