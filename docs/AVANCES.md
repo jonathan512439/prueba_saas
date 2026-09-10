@@ -219,3 +219,15 @@
 - Legibilidad: patrón no interactivo ubicado detrás del contenido; encabezados, tarjetas de producto, avisos y navegación mantienen superficies opacas.
 - Responsive: densidad y opacidad ajustadas para escritorio y teléfono sin añadir desplazamiento lateral.
 - Validación: lint, compilación de producción, paquete estático para Pages y ambos despliegues completados correctamente.
+
+## Piloto visual premium del catálogo SaaS — 2026-09-10
+
+- Estado: implementada y validada técnicamente; publicación en curso.
+- Alcance: Moda, Restaurante, Barbería, Electrónica, Hotel y Juguetería.
+- Modelo: se conserva un único componente de catálogo; cada negocio recibe un preset visual controlado, no una landing independiente.
+- Prioridad móvil: catálogo de ancho completo, encabezado compacto, categorías táctiles, dos columnas de productos, segundo banner y acciones inferiores adaptadas al área segura.
+- Escritorio: contenedor amplio, encabezado en tres zonas, cuatro columnas de productos y ficha de producto en dos columnas.
+- Activos: se conservan sin reemplazos todos los banners y fotografías existentes.
+- Interacciones conservadas: búsqueda, categorías, favoritos, carrito, detalle, variantes, cantidad, reserva o consulta, WhatsApp, compartir y reseña simulada en Maps.
+- Validación previa al despliegue: `oxlint`, compilación de producción y generación estática con base `/prueba_saas` completadas sin errores.
+- Validación visual asistida: pendiente de revisión en los enlaces públicos porque esta sesión no dispone de una superficie de navegador habilitada.

@@ -12,6 +12,7 @@ import { MapsReviewButton } from './maps-review-button';
 
 type CartLine = { rubroId: string; productId: string; name: string; price: number; qty: number; variant: string };
 type CatalogMode = 'commerce' | 'appointment' | 'request' | 'parking';
+type CatalogVisualPreset = 'editorial' | 'gastronomic' | 'service' | 'technical' | 'experience' | 'friendly';
 type Theme = {
   darkHeader: boolean;
   mode: CatalogMode;
@@ -30,6 +31,20 @@ type Theme = {
 };
 
 const PATTERN_ICON_COUNT = 240;
+
+const premiumVisualPresets: Partial<Record<string, CatalogVisualPreset>> = {
+  moda: 'editorial',
+  restaurante: 'gastronomic',
+  barberia: 'service',
+  electronica: 'technical',
+  hotel: 'experience',
+  jugueteria: 'friendly',
+};
+
+function catalogStageClass(rubroId: string) {
+  const preset = premiumVisualPresets[rubroId];
+  return ['reference-stage', 'reference-' + rubroId, preset && 'catalog-premium', preset && 'premium-' + preset].filter(Boolean).join(' ');
+}
 
 const CatalogIconPattern = memo(function CatalogIconPattern({
   primaryIcon,
@@ -593,7 +608,7 @@ function ReferenceHome({ rubro, catalog, theme, favorites, cart, onFavorite, not
   const promo = secondaryPromos[rubro.id] ?? secondaryPromos.calzado;
   const promoProduct = catalog.products[1] ?? catalog.products[0];
 
-  return <main className={'reference-stage reference-' + rubro.id} style={{ '--ref': rubro.color, '--ref-accent': rubro.accent } as React.CSSProperties}>
+  return <main className={catalogStageClass(rubro.id)} style={{ '--ref': rubro.color, '--ref-accent': rubro.accent } as React.CSSProperties}>
     <section className={'reference-phone ' + (theme.categoryFirst ? 'categories-first' : '')}>
       <CatalogIconPattern primaryIcon={rubro.icon} categoryIcons={theme.categoryIcons} />
       <header className={'reference-header ' + (theme.darkHeader ? 'is-dark' : '')}>
@@ -660,7 +675,7 @@ function ReferenceDetail({ rubro, product, theme, favorite, onFavorite, onAdd, n
     else { await navigator.clipboard.writeText(window.location.href); notify('Enlace copiado'); }
   };
 
-  return <main className={'reference-stage reference-' + rubro.id} style={{ '--ref': rubro.color, '--ref-accent': rubro.accent } as React.CSSProperties}>
+  return <main className={catalogStageClass(rubro.id)} style={{ '--ref': rubro.color, '--ref-accent': rubro.accent } as React.CSSProperties}>
     <section className="reference-phone reference-detail">
       <CatalogIconPattern primaryIcon={rubro.icon} categoryIcons={theme.categoryIcons} />
       <header className="reference-detail-bar">
