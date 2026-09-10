@@ -159,6 +159,21 @@ const themes: Record<string, Theme> = {
   },
 };
 
+const secondaryPromos: Record<string, { eyebrow: string; title: string; copy: string; cta: string }> = {
+  calzado: { eyebrow: 'Colección destacada', title: 'RENUEVA TU ESTILO', copy: 'Modelos seleccionados para completar cada look.', cta: 'Ver colección' },
+  canchas: { eyebrow: 'Reserva rápida', title: 'TU PRÓXIMO PARTIDO EMPIEZA AQUÍ', copy: 'Elige horario y reserva sin complicaciones.', cta: 'Reservar ahora' },
+  dental: { eyebrow: 'Atención profesional', title: 'CUIDA TU SONRISA HOY', copy: 'Agenda una valoración y recibe un plan personalizado.', cta: 'Agendar cita' },
+  ferreteria: { eyebrow: 'Asesoría especializada', title: 'TODO PARA TU PRÓXIMO PROYECTO', copy: 'Herramientas y materiales para convertir tus ideas en resultados.', cta: 'Solicitar cotización' },
+  veterinaria: { eyebrow: 'Cuidado recomendado', title: 'BAÑO Y PELUQUERÍA', copy: 'Cuidado profesional para una mascota sana y feliz.', cta: 'Ver servicio' },
+  licoreria: { eyebrow: 'Selección especial', title: 'COMBOS PARA CELEBRAR', copy: 'Bebidas seleccionadas y entrega rápida para tu ocasión.', cta: 'Ver ofertas' },
+  'servicios-hogar': { eyebrow: 'Servicio destacado', title: 'PEQUEÑAS SOLUCIONES, GRANDES CAMBIOS', copy: 'Mantenimiento y reparaciones en una sola visita.', cta: 'Solicitar servicio' },
+  computacion: { eyebrow: 'Soporte especializado', title: 'SERVICIO TÉCNICO CONFIABLE', copy: 'Diagnóstico, mantenimiento y soporte para tus equipos.', cta: 'Solicitar soporte' },
+  seguridad: { eyebrow: 'Protección completa', title: 'INSTALACIÓN QUE TE DA TRANQUILIDAD', copy: 'Cotiza equipos, configuración y soporte técnico.', cta: 'Cotizar instalación' },
+  carpinteria: { eyebrow: 'Diseño a medida', title: 'PROYECTOS QUE TRANSFORMAN TU ESPACIO', copy: 'Diseñamos y fabricamos tus ideas a medida.', cta: 'Solicitar cotización' },
+  estacionamientos: { eyebrow: 'Acceso inmediato', title: 'PARKING SIN COMPLICACIONES', copy: 'Reserva tu espacio y llega sin estrés.', cta: 'Reservar ahora' },
+  consultoria: { eyebrow: 'Asesoría estratégica', title: 'IMPULSA TU PRÓXIMO GRAN PASO', copy: 'Agenda una conversación con un especialista.', cta: 'Solicitar asesoría' },
+};
+
 const go = (path = '') => { window.location.hash = path ? '#/' + path : '#/'; };
 const money = (value: number) => 'Bs ' + value.toLocaleString('es-BO');
 
@@ -196,6 +211,8 @@ function ReferenceHome({ rubro, catalog, theme, favorites, cart, onFavorite, not
     [catalog.products, query],
   );
   const cartCount = cart.reduce((sum, line) => sum + line.qty, 0);
+  const promo = secondaryPromos[rubro.id] ?? secondaryPromos.calzado;
+  const promoProduct = catalog.products[1] ?? catalog.products[0];
 
   return <main className={'reference-stage reference-' + rubro.id} style={{ '--ref': rubro.color, '--ref-accent': rubro.accent } as React.CSSProperties}>
     <section className={'reference-phone ' + (theme.categoryFirst ? 'categories-first' : '')}>
@@ -229,6 +246,11 @@ function ReferenceHome({ rubro, catalog, theme, favorites, cart, onFavorite, not
           <button className="reference-product-copy" onClick={() => go('catalogo/' + rubro.id + '/item/' + product.id)}><b>{product.name}</b><small>{product.subtitle}</small><strong>{money(product.price)}</strong></button>
           <button className="reference-mini-cart" onClick={() => go('catalogo/' + rubro.id + '/item/' + product.id)} aria-label={'Ver ' + product.name}><ShoppingCart /></button>
         </article>)}</div> : <div className="reference-empty"><Search /><b>No encontramos resultados</b><button onClick={() => setQuery('')}>Limpiar búsqueda</button></div>}
+        <section className="reference-secondary-banner" aria-label={promo.title}>
+          <img src={promoProduct?.image ?? catalog.hero} alt="" />
+          <div className="reference-secondary-shade" />
+          <article><span>{promo.eyebrow}</span><h3>{promo.title}</h3><p>{promo.copy}</p><button onClick={() => promoProduct && go('catalogo/' + rubro.id + '/item/' + promoProduct.id)}>{promo.cta} <ChevronRight /></button></article>
+        </section>
         <button className="reference-feature" onClick={() => notify(theme.feature)}><ShieldCheck /><span><b>{theme.feature}</b><small>Información clara antes de elegir</small></span><ChevronRight /></button>
       </section>
 

@@ -76,3 +76,13 @@
 - Microcopy orientado al cliente: “Tu opinión cuenta” y “Déjanos tu reseña en Google Maps”.
 - Estados de interacción añadidos para hover, foco mediante teclado y pulsación táctil.
 - Versión móvil con texto principal siempre visible y versión de escritorio integrada en la barra superior.
+
+## Mejora transversal — Segundo banner promocional — 2026-09-09
+
+- Estado: implementado en las portadas de los 45 catálogos.
+- Ubicación: después de la selección de productos o servicios y antes de la franja informativa final.
+- Catálogos personalizados: contenido, llamada a la acción y microcopy específicos para cada uno de los 12 rubros terminados.
+- Catálogos generales: banner fotográfico adaptable con mensaje de atención personalizada.
+- Activos: se reutilizan las fotografías reales ya preparadas para cada catálogo con un encuadre secundario diferenciado.
+- Interacción: cada llamada a la acción abre una ficha relacionada o inicia la consulta por WhatsApp, según el tipo de catálogo.
+- Responsive: composición horizontal en escritorio y lectura adaptada para móvil con contraste reforzado.
