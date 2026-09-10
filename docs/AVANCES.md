@@ -277,7 +277,7 @@
 
 ## Información rápida en los siete catálogos premium — 2026-09-10
 
-- Estado: implementada y validada; publicación en curso.
+- Estado: implementada, validada y publicada.
 - Arquitectura: el bloque exclusivo de Veterinaria se reemplaza por un único componente configurable compartido.
 - Alcance: Moda, Restaurante, Barbería, Electrónica, Hotel, Juguetería y Veterinaria.
 - Estructura común: encabezado contextual, estado visible, tres acciones rápidas y franja informativa inferior.
@@ -291,3 +291,5 @@
 - Funcionalidad: las acciones navegan a productos, desplazan el catálogo, abren WhatsApp o Maps, o muestran retroalimentación simulada.
 - Patrones e imágenes: se conservan en todos los catálogos sin reemplazos.
 - Validación: linter y compilación estática para GitHub Pages completados sin errores.
+- GitHub: commit funcional `396a13ea82ed84dc83ec7e8f8868a73005063cc1`; workflow `Deploy GitHub Pages` #34517423163 completado correctamente.
+- Sites: versión privada 10 (`appgprj_6aa1d744bdb4819188d8cf7320cb2418~appgver_68e742c669e881919d900b59447e244e`) publicada correctamente.
