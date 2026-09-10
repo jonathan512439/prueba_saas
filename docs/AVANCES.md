@@ -33,3 +33,14 @@
 1. Personalizar el segundo grupo de rubros con banners y productos únicos.
 2. Sustituir datos demostrativos por contenido definitivo del negocio.
 3. Realizar revisión visual por dispositivo y accesibilidad.
+
+## Corrección de fidelidad visual — 2026-09-09
+
+- Motivo: la primera versión reutilizaba una plantilla web genérica y no replicaba suficientemente las interfaces móviles mostradas en las referencias.
+- Referencias auditadas: 02 Calzado, 17 Canchas deportivas, 41 Clínica dental y 44 Ferretería.
+- Diferencias detectadas: escala de escritorio incorrecta, jerarquía y orden de bloques distintos, categorías sin tratamiento circular, tarjetas demasiado grandes y fichas sin los controles específicos de cada rubro.
+- Corrección implementada: nuevo componente móvil para los cuatro pilotos, con cabecera de marca, buscador, banner compacto, categorías circulares, tarjetas densas, navegación inferior fija y ficha detallada.
+- Flujos específicos añadidos: tallas y variantes para Calzado; fechas y horarios para Clínica dental y Canchas; especificaciones, cantidad, carrito y WhatsApp para Ferretería.
+- Estado al retomar: implementación y compilación local completadas.
+- Revisión visual final: portada y ficha de Calzado verificadas en navegador, con navegación funcional y sin errores de consola.
+- Estado de la corrección: lista para publicación en GitHub Pages.

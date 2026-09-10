@@ -13,6 +13,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle } from '@/components/ui/sheet';
 import { families, getCatalog, rubros, type Product, type Rubro } from './catalog-data';
+import { ReferenceCatalog } from './reference-catalog';
 
 type CartLine = { rubroId: string; productId: string; name: string; price: number; qty: number; variant: string };
 type Route = { name: 'portal' | 'rubro' | 'catalogo' | 'favoritos' | 'carrito' | 'perfil'; rubroId?: string; productId?: string };
@@ -167,6 +168,7 @@ function CatalogView({ rubro, productId, favorites, cart, toggleFavorite, addToC
   const products = catalog.products.filter((p) => p.name.toLowerCase().includes(query.toLowerCase()));
   const whatsapp = (product?: Product) => { const text = product ? `Hola ${rubro.brand}, me interesa ${product.name} (${money(product.price)}).` : `Hola ${rubro.brand}, quisiera información sobre su catálogo.`; window.open(`https://wa.me/59170000000?text=${encodeURIComponent(text)}`, '_blank', 'noopener,noreferrer'); };
   const share = async () => { const data = { title: rubro.brand, text: catalog.heroTitle, url: window.location.href }; if (navigator.share) await navigator.share(data); else { await navigator.clipboard.writeText(data.url); notify('Enlace copiado'); } };
+  if (rubro.ready) return <ReferenceCatalog rubro={rubro} catalog={catalog} productId={productId} favorites={favorites} cart={cart} onFavorite={toggleFavorite} onAdd={addToCart} notify={notify} />;
   return <main className="catalog-page" style={{ '--brand': rubro.color, '--brand-accent': rubro.accent } as React.CSSProperties}>
     <div className="catalog-topline"><span><BadgeCheck size={15} /> Negocio verificado</span><span><PackageCheck size={15} /> Atención en La Paz</span><button onClick={share}><Share2 size={15} /> Compartir</button></div>
     <header className="catalog-header"><button className="catalog-brand" onClick={() => go(`rubro/${rubro.id}`)}><span>{rubro.icon}</span><b>{rubro.brand}</b></button><div className="catalog-search"><Search size={18} /><input ref={searchRef} value={query} onChange={(e) => setQuery(e.target.value)} placeholder={`Buscar en ${rubro.brand}`} /><button onClick={() => { setQuery(''); searchRef.current?.focus(); }} aria-label="Limpiar búsqueda"><X size={15} /></button></div><div className="catalog-actions"><button onClick={() => go('favoritos')} aria-label="Favoritos"><Heart size={20} /><em>{favorites.length}</em></button><button onClick={() => go('carrito')} aria-label="Pedido"><ShoppingBag size={20} /><em>{cart.reduce((sum, item) => sum + item.qty, 0)}</em></button><button onClick={() => notify('Menú listo')} aria-label="Abrir menú"><Menu size={21} /></button></div></header>

@@ -42,7 +42,7 @@ async function renderHome() {
     }
   }
 
-  throw new Error(`No se pudo renderizar ${url}: ${lastError}`);
+  throw new Error('No se pudo renderizar ' + url + ': ' + String(lastError));
 }
 
 try {
