@@ -86,3 +86,15 @@
 - Activos: se reutilizan las fotografías reales ya preparadas para cada catálogo con un encuadre secundario diferenciado.
 - Interacción: cada llamada a la acción abre una ficha relacionada o inicia la consulta por WhatsApp, según el tipo de catálogo.
 - Responsive: composición horizontal en escritorio y lectura adaptada para móvil con contraste reforzado.
+
+## Fase 3 — Servicios, entretenimiento y comercio especializado — 2026-09-10
+
+- Estado: implementada, validada y publicada en GitHub Pages.
+- Rubros: Transporte / mudanzas, Streaming, Entretenimiento infantil, Gimnasios / entrenamiento, Partes eléctricas / electrónicas, Cajas americanas / saldos importados y Agencias de viaje.
+- Referencias auditadas: láminas 10 a 16.
+- Activos: siete fotografías originales generadas para portadas y tarjetas, sin marcas, texto ni interfaces incrustadas.
+- Contenido: 28 fichas nuevas con precios en bolivianos, disponibilidad, variantes y atributos específicos por rubro.
+- Flujos: cotización de mudanzas; selección y renovación de planes digitales; reserva de fiestas; inscripción y compra fitness; cotización técnica; compra de lotes; y reserva de paquetes turísticos.
+- Fidelidad visual: cabeceras oscuras, categorías circulares, paletas específicas, banners dobles, grillas densas y ficha detallada móvil.
+- Funciones conservadas: búsqueda, favoritos, carrito cuando corresponde, fechas, mapa, reseña simulada de Google Maps y contacto por WhatsApp.
+- Validación: análisis de código, compilación de producción y paquete estático de Pages completados correctamente.
