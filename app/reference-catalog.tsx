@@ -387,6 +387,56 @@ const themes: Record<string, Theme> = {
     feature: 'Compatibilidad por mascota, etapa y tamaño',
     optionLabel: 'Sabor, peso o tamaño', contactLabel: 'Consultar o comprar por WhatsApp',
   },
+  libreria: {
+    darkHeader: true, mode: 'commerce',
+    headline: 'TODO PARA UN GRAN AÑO ESCOLAR',
+    copy: 'Aprende, crea y organiza con todo lo que necesitas.',
+    cta: 'Ver productos', section: 'Esenciales para estudiar',
+    nav: ['Inicio', 'Categorías', 'Buscar', 'Listas', 'Perfil'],
+    categoryIcons: ['📓', '🖊️', '🎨', '📎', '🎒', '📋'],
+    feature: 'Listas escolares completas, packs y stock real',
+    optionLabel: 'Color, formato o presentación', contactLabel: 'Pedir por WhatsApp',
+  },
+  pasteleria: {
+    darkHeader: true, mode: 'appointment',
+    headline: 'TORTAS QUE CONVIERTEN MOMENTOS EN RECUERDOS',
+    copy: 'Diseños artesanales preparados para tu celebración.',
+    cta: 'Diseñar mi torta', section: 'Dulces favoritos',
+    nav: ['Inicio', 'Categorías', 'Diseñar', 'Pedidos', 'Perfil'],
+    categoryIcons: ['🎂', '🧁', '🍰', '🍮', '✨', '🏷️'],
+    feature: 'Sabor, porciones, diseño y fecha en un solo pedido',
+    optionLabel: 'Sabor, tamaño o paquete', primaryLabel: 'Reservar por WhatsApp', contactLabel: 'Personalizar mi pedido', location: 'Entrega o recojo programado',
+  },
+  muebleria: {
+    darkHeader: true, mode: 'commerce',
+    headline: 'ESPACIOS QUE INSPIRAN Y HACEN HOGAR',
+    copy: 'Diseño funcional, confort y acabados para cada ambiente.',
+    cta: 'Explorar muebles', section: 'Muebles destacados',
+    nav: ['Inicio', 'Ambientes', 'Buscar', 'Favoritos', 'Perfil'],
+    categoryIcons: ['🛋️', '🪑', '🛏️', '🗄️', '🪴', '📐'],
+    feature: 'Medidas, materiales, colores y entrega visibles',
+    optionLabel: 'Color, acabado o tamaño', contactLabel: 'Consultar o comprar por WhatsApp',
+  },
+  repuestos: {
+    darkHeader: true, mode: 'commerce',
+    headline: 'COMPATIBILIDAD REAL, REPUESTOS EN LOS QUE CONFÍAS',
+    copy: 'Encuentra la pieza correcta por vehículo, año o código.',
+    cta: 'Buscar repuestos', section: 'Repuestos destacados',
+    nav: ['Inicio', 'Categorías', 'Mi vehículo', 'Favoritos', 'Perfil'],
+    categoryIcons: ['🛑', '🛢️', '⚙️', '🔋', '🛞', '🔧'],
+    feature: 'Compatibilidad por marca, modelo, año y código',
+    optionLabel: 'Vehículo, medida o variante', contactLabel: 'Confirmar compatibilidad por WhatsApp',
+  },
+  floreria: {
+    darkHeader: true, mode: 'appointment',
+    headline: 'EMOCIONES QUE SE ENTREGAN',
+    copy: 'Flores, regalos y detalles personalizados para cada ocasión.',
+    cta: 'Elegir un detalle', section: 'Detalles destacados',
+    nav: ['Inicio', 'Ocasiones', 'Buscar', 'Pedidos', 'Perfil'],
+    categoryIcons: ['💐', '🎁', '🧸', '🍫', '💌', '🏷️'],
+    feature: 'Personaliza colores, mensaje y horario de entrega',
+    optionLabel: 'Tamaño, color o presentación', primaryLabel: 'Programar por WhatsApp', contactLabel: 'Personalizar mi detalle', location: 'Entrega o recojo programado',
+  },
 };
 
 const secondaryPromos: Record<string, { eyebrow: string; title: string; copy: string; cta: string }> = {
@@ -425,6 +475,11 @@ const secondaryPromos: Record<string, { eyebrow: string; title: string; copy: st
   jugueteria: { eyebrow: 'Regalos por etapa', title: 'INFINITAS ETAPAS, UN SOLO LUGAR', copy: 'Elige productos seguros que acompañan su crecimiento.', cta: 'Encontrar un regalo' },
   deportes: { eyebrow: 'Combos de entrenamiento', title: 'EQUÍPATE SIN LÍMITES', copy: 'Todo lo necesario para entrenar, competir y avanzar.', cta: 'Ver combos' },
   'pet-shop': { eyebrow: 'Diversión y bienestar', title: 'JUEGA, EXPLORA, DISFRUTA JUNTOS', copy: 'Juguetes y accesorios adecuados para cada mascota.', cta: 'Ver juguetes' },
+  libreria: { eyebrow: 'Listas sin complicaciones', title: 'TODO LISTO PARA VOLVER A CLASES', copy: 'Envíanos tu lista y la preparamos completa para recoger o recibir.', cta: 'Armar mi lista' },
+  pasteleria: { eyebrow: 'Celebra a tu manera', title: 'MESAS DULCES PARA TUS EVENTOS', copy: 'Sabores, decoración y montaje coordinados con tu celebración.', cta: 'Ver paquetes' },
+  muebleria: { eyebrow: 'Diseño para vivir mejor', title: 'ESPACIOS CON PERSONALIDAD', copy: 'Combina muebles, materiales y acabados para transformar tu hogar.', cta: 'Inspirarme' },
+  repuestos: { eyebrow: 'Conduce con confianza', title: 'LISTO PARA CUALQUIER CAMINO', copy: 'Frenos, lubricantes, baterías y llantas compatibles con tu vehículo.', cta: 'Ver repuestos' },
+  floreria: { eyebrow: 'Detalles con intención', title: 'HAZ ESPECIAL CUALQUIER OCASIÓN', copy: 'Elige flores, mensaje y complemento para una entrega inolvidable.', cta: 'Crear mi detalle' },
 };
 
 const go = (path = '') => { window.location.hash = path ? '#/' + path : '#/'; };

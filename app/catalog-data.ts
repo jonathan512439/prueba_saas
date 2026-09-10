@@ -99,7 +99,8 @@ export const rubros: Rubro[] = source.map((item, index) => ({
     'mayorista', 'ceramicas', 'sala-juegos', 'artesanias', 'tours',
     'educacion', 'inmobiliaria', 'hotel', 'foto-video-dj', 'clinica-pet',
     'imprenta', 'alquiler-eventos', 'optica', 'jugueteria', 'deportes',
-    'pet-shop', 'dental', 'canchas', 'ferreteria',
+    'pet-shop', 'libreria', 'pasteleria', 'muebleria', 'repuestos',
+    'floreria', 'dental', 'canchas', 'ferreteria',
   ].includes(item[0]),
 }));
 
@@ -476,6 +477,66 @@ export const pilotCatalogs: Record<string, PilotCatalog> = {
       { id:'juguete-dispensador', name:'Juguete dispensador resistente', subtitle:'Juego, premio y estimulación mental', price:120, rating:4.8, stock:'16 unidades', image:photo('pet-shop'), variants:['Pequeño','Mediano','Grande'], attributes:[['Mascota','Perro'],['Etapa','Todas'],['Material','Caucho resistente'],['Uso','Premios / entretenimiento'],['Tamaño','Según raza'],['Lavado','Agua y jabón']] },
       { id:'arena-aglomerante', name:'Arena aglomerante para gatos', subtitle:'Control de olores y limpieza sencilla', price:85, rating:4.8, stock:'24 bolsas', badge:'Compra frecuente', image:photo('pet-shop'), variants:['5 kg','10 kg'], attributes:[['Mascota','Gato'],['Tipo','Aglomerante'],['Presentación','5 kg'],['Aroma','Neutro'],['Control de olor','Alto'],['Composición','Mineral seleccionada']] },
       { id:'kit-higiene-pet', name:'Kit de higiene para mascota', subtitle:'Cuidado diario de piel, pelo y paseo', price:145, rating:4.7, stock:'11 kits', image:photo('pet-shop'), variants:['Perro','Gato'], attributes:[['Mascota','Perro / gato'],['Incluye','Shampoo + cepillo + toalla'],['Etapa','Adulto'],['Fórmula','Suave'],['Condición','Piel normal'],['Presentación','Kit de 3 piezas']] },
+    ],
+  },
+  libreria: {
+    id: 'libreria', hero: photo('libreria'), kicker: 'Regreso a clases · Todo en un lugar',
+    heroTitle: 'Todo para un gran año escolar.',
+    heroCopy: 'Útiles, escritura, arte y listas escolares organizadas por nivel y necesidad.',
+    categories: ['Todo', 'Cuadernos', 'Escritura', 'Arte', 'Oficina', 'Mochilas', 'Listas escolares'], action: 'Ver productos',
+    products: [
+      { id:'cuaderno-profesional', name:'Cuaderno profesional universitario', subtitle:'100 hojas · escritura cómoda y resistente', price:25, rating:4.9, stock:'42 unidades', badge:'Más vendido', image:photo('libreria'), variants:['Azul','Rojo','Verde','Morado'], attributes:[['Marca','Punto Escolar'],['Hojas','100'],['Tamaño','21 × 27 cm'],['Formato','Rayado'],['Presentación','Unidad'],['Nivel','Primaria / secundaria']] },
+      { id:'boligrafos-pack', name:'Pack de bolígrafos gel × 3', subtitle:'Trazo uniforme y secado rápido', price:18, rating:4.8, stock:'35 packs', image:photo('libreria'), variants:['Azul','Negro','Multicolor'], attributes:[['Punta','0,7 mm'],['Tinta','Gel'],['Presentación','Pack × 3'],['Secado','Rápido'],['Uso','Escuela / oficina'],['Trazo','Suave y continuo']] },
+      { id:'lapices-color', name:'Lápices de color profesionales', subtitle:'Pigmentos intensos para arte y colegio', price:65, rating:4.8, stock:'18 cajas', badge:'Arte favorito', image:photo('libreria'), variants:['12 colores','24 colores','36 colores'], attributes:[['Material','Madera certificada'],['Punta','Alta resistencia'],['Presentación','Caja metálica'],['Uso','Arte / escolar'],['Pigmentación','Intensa'],['Edad','6+ años']] },
+      { id:'lista-escolar', name:'Lista escolar completa secundaria', subtitle:'Armada, revisada y lista para entregar', price:285, rating:4.9, stock:'Preparación en 24 h', badge:'Ahorra tiempo', image:photo('libreria'), variants:['Básica','Completa','Personalizada'], attributes:[['Nivel','Secundaria'],['Contenido','Cuadernos + escritura + arte'],['Sustituciones','Equivalentes autorizados'],['Armado','Incluido'],['Entrega','Recojo o domicilio'],['Personalización','Según lista del colegio']] },
+    ],
+  },
+  pasteleria: {
+    id: 'pasteleria', hero: photo('pasteleria'), kicker: 'Repostería artesanal para celebrar',
+    heroTitle: 'Tortas que convierten momentos en recuerdos.',
+    heroCopy: 'Elige sabor, relleno, tamaño y fecha para crear un detalle hecho especialmente para ti.',
+    categories: ['Todo', 'Tortas', 'Cupcakes', 'Postres', 'Mesas dulces', 'Personalizados', 'Promociones'], action: 'Diseñar mi torta',
+    products: [
+      { id:'torta-personalizada', name:'Torta personalizada de celebración', subtitle:'Diseño artesanal con mensaje y decoración', price:320, rating:4.9, stock:'Agenda disponible', badge:'Más pedida', image:photo('pasteleria'), variants:['Vainilla','Chocolate','Red Velvet'], attributes:[['Porciones','12 personas'],['Relleno','Frutos rojos / chocolate'],['Decoración','Drip + frutas'],['Mensaje','Personalizable'],['Alérgenos','Gluten y lácteos'],['Entrega','Fecha programada']] },
+      { id:'torta-red-velvet', name:'Torta Red Velvet premium', subtitle:'Bizcocho aterciopelado y crema suave', price:280, rating:4.8, stock:'4 fechas esta semana', image:photo('pasteleria'), variants:['12 porciones','20 porciones','30 porciones'], attributes:[['Sabor','Red Velvet'],['Relleno','Cream cheese'],['Cobertura','Crema artesanal'],['Decoración','Frutos rojos'],['Conservación','Refrigerada'],['Anticipación','48 horas']] },
+      { id:'cupcakes-gourmet', name:'Cupcakes gourmet × 6', subtitle:'Sabores combinados para compartir', price:48, rating:4.8, stock:'Producción diaria', badge:'Detalle ideal', image:photo('pasteleria'), variants:['Chocolate','Vainilla','Mixtos'], attributes:[['Cantidad','6 unidades'],['Tamaño','Estándar'],['Cobertura','Buttercream'],['Decoración','Temática opcional'],['Mensaje','Topper opcional'],['Entrega','Recojo o delivery']] },
+      { id:'mesa-dulce', name:'Mesa dulce para eventos', subtitle:'Postres, montaje y decoración coordinada', price:850, rating:4.9, stock:'3 fechas disponibles', image:photo('pasteleria'), variants:['30 personas','50 personas','80 personas'], attributes:[['Incluye','6 variedades de postres'],['Montaje','Incluido'],['Decoración','Paleta personalizada'],['Duración','4 horas'],['Vajilla','Base y exhibidores'],['Reserva','50 % de anticipo']] },
+    ],
+  },
+  muebleria: {
+    id: 'muebleria', hero: photo('muebleria'), kicker: 'Diseño, confort y materiales duraderos',
+    heroTitle: 'Espacios que inspiran y hacen hogar.',
+    heroCopy: 'Muebles funcionales con medidas, materiales y acabados claros antes de comprar.',
+    categories: ['Todo', 'Sala', 'Comedor', 'Dormitorio', 'Oficina', 'Decoración', 'A medida'], action: 'Explorar muebles',
+    products: [
+      { id:'sofa-nordico', name:'Sofá Nórdico de 3 cuerpos', subtitle:'Confort envolvente y líneas contemporáneas', price:3490, rating:4.9, stock:'Entrega en 3–5 días', badge:'Más elegido', image:photo('muebleria'), variants:['Beige','Gris','Azul','Verde'], attributes:[['Dimensiones','200 × 85 × 90 cm'],['Tapiz','Lino antimanchas'],['Estructura','Madera seca'],['Capacidad','3 personas'],['Montaje','Incluido'],['Garantía','12 meses']] },
+      { id:'comedor-nativa', name:'Comedor Casa Nativa', subtitle:'Madera sólida para compartir cada día', price:4990, rating:4.9, stock:'2 juegos disponibles', image:photo('muebleria'), variants:['4 sillas','6 sillas'], attributes:[['Mesa','160 × 90 × 76 cm'],['Material','Madera sólida'],['Acabado','Natural mate'],['Capacidad','4 o 6 personas'],['Montaje','Incluido'],['Fabricación','Nacional']] },
+      { id:'estante-riviera', name:'Estante Riviera modular', subtitle:'Organización vertical con diseño cálido', price:1250, rating:4.8, stock:'7 unidades', badge:'Versátil', image:photo('muebleria'), variants:['Natural','Nogal','Negro'], attributes:[['Dimensiones','90 × 35 × 180 cm'],['Material','MDF enchapado'],['Repisas','5 niveles'],['Carga','15 kg por nivel'],['Anclaje','Kit incluido'],['Armado','Servicio opcional']] },
+      { id:'escritorio-home', name:'Escritorio Home Office', subtitle:'Superficie amplia y almacenamiento integrado', price:1450, rating:4.8, stock:'5 unidades', image:photo('muebleria'), variants:['120 cm','150 cm'], attributes:[['Altura','75 cm'],['Material','Madera + metal'],['Cajones','2'],['Pasacables','Incluido'],['Estilo','Industrial cálido'],['Entrega','48–72 horas']] },
+    ],
+  },
+  repuestos: {
+    id: 'repuestos', hero: photo('repuestos'), kicker: 'Compatibilidad verificada para tu vehículo',
+    heroTitle: 'Repuestos en los que confías.',
+    heroCopy: 'Busca por marca, modelo, año o código y encuentra la pieza correcta antes de comprar.',
+    categories: ['Todo', 'Frenos', 'Lubricantes', 'Filtros', 'Baterías', 'Llantas', 'Accesorios'], action: 'Buscar repuestos',
+    products: [
+      { id:'pastillas-freno', name:'Pastillas de freno delanteras', subtitle:'Frenado estable y ajuste compatible', price:320, rating:4.9, stock:'12 juegos', badge:'Compatibilidad verificada', image:photo('repuestos'), variants:['Corolla 2014–2018','Corolla 2019–2022'], attributes:[['Vehículo','Toyota Corolla'],['Motor','1.8 L'],['Código equivalente','AP-04465'],['Posición','Delantera'],['Contenido','Juego para ambos lados'],['Garantía','6 meses']] },
+      { id:'aceite-sintetico', name:'Aceite sintético 5W-30 · 4 L', subtitle:'Protección avanzada para motor a gasolina', price:280, rating:4.8, stock:'26 unidades', image:photo('repuestos'), variants:['5W-30','10W-40'], attributes:[['Viscosidad','5W-30'],['Presentación','4 litros'],['Norma','API SP'],['Motor','Gasolina'],['Tecnología','100 % sintética'],['Intervalo','Según fabricante']] },
+      { id:'bateria-12v', name:'Batería automotriz 12 V · 60 Ah', subtitle:'Arranque confiable y larga duración', price:890, rating:4.8, stock:'8 unidades', badge:'Instalación disponible', image:photo('repuestos'), variants:['Borne izquierdo','Borne derecho'], attributes:[['Voltaje','12 V'],['Capacidad','60 Ah'],['Arranque','520 CCA'],['Dimensiones','24 × 17 × 19 cm'],['Garantía','12 meses'],['Instalación','Opcional']] },
+      { id:'llanta-aro16', name:'Llanta urbana aro 16', subtitle:'Agarre, confort y desgaste uniforme', price:720, rating:4.8, stock:'16 unidades', image:photo('repuestos'), variants:['205/55 R16','215/60 R16'], attributes:[['Medida','205/55 R16'],['Índice de carga','91'],['Velocidad','V'],['Temporada','Todo clima'],['Uso','Ciudad / carretera'],['Garantía','Por fabricación']] },
+    ],
+  },
+  floreria: {
+    id: 'floreria', hero: photo('floreria'), kicker: 'Flores y detalles para cada ocasión',
+    heroTitle: 'Emociones que se entregan.',
+    heroCopy: 'Personaliza flores, colores, mensaje y horario para sorprender con el detalle correcto.',
+    categories: ['Todo', 'Ramos', 'Cajas sorpresa', 'Peluches', 'Regalos', 'Ocasiones', 'Promociones'], action: 'Elegir un detalle',
+    products: [
+      { id:'ramo-amor-eterno', name:'Ramo Amor Eterno', subtitle:'Rosas, lirios y follaje en composición premium', price:350, rating:4.9, stock:'Entrega hoy', badge:'Más regalado', image:photo('floreria'), variants:['Pequeño','Mediano','Grande'], attributes:[['Ocasión','Aniversario / cumpleaños'],['Flores','Rosas y lirios'],['Colores','Rosa y blanco'],['Mensaje','Tarjeta personalizada'],['Complementos','Opcionales'],['Entrega','Fecha y hora programadas']] },
+      { id:'caja-romance', name:'Caja Romance completa', subtitle:'Flores, chocolates y peluche en un solo detalle', price:420, rating:4.9, stock:'7 disponibles', image:photo('floreria'), variants:['Rosa','Rojo','Mixto'], attributes:[['Incluye','Flores + chocolates + peluche'],['Tamaño','Mediano'],['Caja','Rígida premium'],['Mensaje','Personalizable'],['Preparación','3 horas'],['Entrega','Delivery o recojo']] },
+      { id:'peluche-osito', name:'Osito de peluche con tarjeta', subtitle:'Un complemento tierno para cualquier ocasión', price:180, rating:4.8, stock:'14 unidades', badge:'Complemento favorito', image:photo('floreria'), variants:['Beige','Café','Rosa'], attributes:[['Altura','40 cm'],['Material','Felpa hipoalergénica'],['Tarjeta','Incluida'],['Empaque','Bolsa de regalo'],['Edad','3+ años'],['Entrega','Disponible hoy']] },
+      { id:'ramo-celebracion', name:'Ramo Celebración', subtitle:'Flores de temporada llenas de color', price:280, rating:4.8, stock:'Producción diaria', image:photo('floreria'), variants:['Pastel','Vibrante','Blanco y verde'], attributes:[['Flores','Selección de temporada'],['Tamaño','Mediano'],['Ocasión','Cumpleaños / felicitación'],['Envoltura','Papel premium'],['Mensaje','Incluido'],['Duración','5–8 días con cuidados']] },
     ],
   },
   calzado: {

@@ -143,3 +143,20 @@
 - Verificación pública: portada, banner de Producción audiovisual y banner de Pet shop responden con HTTP 200.
 - Sites: el manifiesto conserva el proyecto existente, pero el conector actual respondió project_not_found; no se creó otro proyecto para evitar duplicados.
 - Cobertura acumulada: 35 de 45 rubros personalizados; quedan 10.
+
+## Fase 6 — Comercio especializado, celebraciones, hogar y regalos — 2026-09-10
+
+- Estado: implementada; validación y publicación en curso.
+- Rubros: Librería / papelería, Pastelería / repostería, Mueblería / decoración, Repuestos automotrices / motos y Florería / regalos.
+- Referencias auditadas: láminas 34 a 38.
+- Activos: cinco banners fotográficos originales, horizontales, sin marcas ni texto incrustado y con zona segura para titulares HTML.
+- Contenido: 20 fichas nuevas, cuatro por rubro, con precios en bolivianos, disponibilidad, calificación, variantes y atributos especializados.
+- Librería: marca, hojas, tamaño, formato, color, presentación, nivel educativo, packs y listas escolares personalizadas.
+- Pastelería: porciones, sabor, relleno, decoración, mensaje, alérgenos, complementos, fecha y modalidad de entrega.
+- Mueblería: dimensiones, materiales, tapiz, colores, acabados, capacidad, armado, fabricación, entrega y garantía.
+- Repuestos: compatibilidad por vehículo, motor, año, código equivalente, posición, medidas, normas técnicas e instalación.
+- Florería: ocasión, flores, paleta, tamaño, mensaje, complementos, preparación, fecha y hora de entrega.
+- Flujos: compra y configuración para Librería, Mueblería y Repuestos; programación por fecha para Pastelería y Florería.
+- Diseño: cinco identidades cromáticas, encabezado con reseña simulada de Google Maps, categorías específicas, dos banners, grilla densa y ficha detallada móvil.
+- Navegación prevista: portada, categorías, búsqueda, favoritos o pedidos, ficha, selección de opciones y contacto por WhatsApp.
+- Cobertura acumulada: 40 de 45 rubros personalizados; quedan 5 para la Fase 7.
