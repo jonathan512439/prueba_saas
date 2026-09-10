@@ -260,3 +260,15 @@
 - Validación: linter y compilación estática de GitHub Pages completados sin errores.
 - GitHub: commit funcional `2383c502c634ca7d4314e5e195ff4b273aa8f8ad`; workflow `Deploy GitHub Pages` #34509209165 completado correctamente.
 - Sites: versión privada 8 (`appgprj_6aa1d744bdb4819188d8cf7320cb2418~appgver_ddc1d03c04c08191a3ad17da26620331`) publicada correctamente.
+
+## Compactación de títulos y tarjetas premium — 2026-09-10
+
+- Estado: implementada y validada; publicación en curso.
+- Alcance: los siete catálogos con preset premium.
+- Banner superior: el título queda limitado al 60% del ancho disponible y reduce su escala tipográfica en móvil y escritorio.
+- Contenido del banner: texto secundario y llamada a la acción compactados para mantener aire alrededor de la fotografía.
+- Categorías: menor altura, iconos de 48 px en móvil y 54 px en escritorio.
+- Productos: imágenes y cuerpos de tarjeta reducidos verticalmente; se conservan nombre, descripción, precio, favorito y acción.
+- Veterinaria: accesos rápidos reducidos y tarjetas horizontales más cortas en ambos tamaños de pantalla.
+- Patrones: permanecen activos detrás del contenido en todos los catálogos.
+- Validación: linter y compilación estática para GitHub Pages completados sin errores.
