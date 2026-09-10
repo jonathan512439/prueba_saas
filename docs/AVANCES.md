@@ -166,3 +166,20 @@
 - Revisión visual en navegador: portada y ficha de Librería comprobadas en producción, con navegación por producto, variantes, especificaciones y CTAs visibles sin errores.
 - Sites: el manifiesto conserva el proyecto existente, pero el conector actual respondió `project_not_found`; no se creó otro proyecto para evitar duplicados.
 - Cobertura acumulada: 40 de 45 rubros personalizados; quedan 5 para la Fase 7.
+
+## Fase 7 — Tecnología, consumo, belleza, moda y gastronomía — 2026-09-10
+
+- Estado: implementada; validación y publicación en curso.
+- Rubros: Electrónica / tecnología, Minimarket / abarrotes, Barbería / belleza, Moda / boutique y Restaurante / comida.
+- Referencias auditadas: láminas 39, 40, 42, 43 y 45; las láminas 41 y 44 ya correspondían a los pilotos Dental y Ferretería.
+- Activos: cinco banners fotográficos originales, horizontales, sin marcas ni texto incrustado y con zona segura para titulares HTML.
+- Contenido: 20 fichas nuevas, cuatro por rubro, con precios en bolivianos, disponibilidad, calificación, variantes y atributos especializados.
+- Electrónica: marca, modelo, color, almacenamiento, batería, conectividad, compatibilidad, especificaciones y garantía.
+- Minimarket: marca, contenido neto, variedad, presentación, unidad, vencimiento, sustituciones, promociones y delivery.
+- Barbería: servicio, profesional, duración, paquete, sede, extras, fecha, horario y reserva.
+- Moda: talla, color, material, estilo, marca, temporada, calce, cuidado y stock por variante.
+- Restaurante: tamaño o porción, ingredientes, acompañamientos, picante, extras, combos, preparación y modalidad de entrega.
+- Flujos: comparación y compra para Electrónica; carrito rápido para Minimarket; agenda para Barbería; talla y color para Moda; menú configurable para Restaurante.
+- Diseño: cinco identidades visuales, encabezado con reseña simulada de Google Maps, categorías específicas, dos banners, grilla densa y fichas detalladas.
+- Navegación funcional: portada, categorías, búsqueda, favoritos o pedidos, ficha, selección de opciones, cantidad y contacto por WhatsApp.
+- Cobertura acumulada: 45 de 45 rubros personalizados; catálogo multirrubro completo.

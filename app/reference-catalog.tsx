@@ -437,6 +437,56 @@ const themes: Record<string, Theme> = {
     feature: 'Personaliza colores, mensaje y horario de entrega',
     optionLabel: 'Tamaño, color o presentación', primaryLabel: 'Programar por WhatsApp', contactLabel: 'Personalizar mi detalle', location: 'Entrega o recojo programado',
   },
+  electronica: {
+    darkHeader: true, mode: 'commerce',
+    headline: 'TECNOLOGÍA QUE TE CONECTA CON LO QUE IMPORTA',
+    copy: 'Equipos, audio y accesorios con especificaciones claras.',
+    cta: 'Ver productos', section: 'Tecnología destacada',
+    nav: ['Inicio', 'Categorías', 'Comparar', 'Pedidos', 'Perfil'],
+    categoryIcons: ['📱', '💻', '🎧', '📷', '🎮', '⌚', '💡'],
+    feature: 'Compara capacidad, conectividad, compatibilidad y garantía',
+    optionLabel: 'Color, capacidad o modelo', contactLabel: 'Consultar o comprar por WhatsApp',
+  },
+  minimarket: {
+    darkHeader: false, mode: 'commerce',
+    headline: 'DESPENSA COMPLETA AL MEJOR PRECIO',
+    copy: 'Calidad y productos esenciales para tu día a día.',
+    cta: 'Ver ofertas', section: 'Ofertas de la semana',
+    nav: ['Inicio', 'Categorías', 'Buscar', 'Pedidos', 'Perfil'],
+    categoryIcons: ['🛍️', '🥤', '🥛', '🍿', '🧴', '🥬'],
+    feature: 'Delivery en tu zona entre 30 y 60 minutos',
+    optionLabel: 'Presentación, tamaño o variedad', contactLabel: 'Pedir por WhatsApp',
+  },
+  barberia: {
+    darkHeader: false, mode: 'appointment',
+    headline: 'UN BUEN ESTILO SIEMPRE HABLA DE TI',
+    copy: 'Cortes, barba y cuidado profesional. Reserva tu cita.',
+    cta: 'Ver servicios', section: 'Servicios populares',
+    nav: ['Inicio', 'Servicios', 'Agenda', 'Profesionales', 'Perfil'],
+    categoryIcons: ['✂️', '🧔', '✨', '💧', '🎁'],
+    feature: 'Profesionales, fechas y horarios disponibles',
+    optionLabel: 'Profesional y horario', primaryLabel: 'Reservar por WhatsApp', contactLabel: 'Consultar o agendar mi cita', location: 'Barber Shop · Sede Centro',
+  },
+  moda: {
+    darkHeader: false, mode: 'commerce',
+    headline: 'NUEVA COLECCIÓN',
+    copy: 'Estilo que te acompaña siempre.',
+    cta: 'Ver colección', section: 'Más vendidos',
+    nav: ['Inicio', 'Categorías', 'Buscar', 'Pedidos', 'Perfil'],
+    categoryIcons: ['👚', '👖', '👗', '🧥', '👜'],
+    feature: 'Guía de tallas, colores y stock por variante',
+    optionLabel: 'Selecciona tu talla', contactLabel: 'Consultar o comprar por WhatsApp',
+  },
+  restaurante: {
+    darkHeader: false, mode: 'commerce',
+    headline: 'HAMBURGUESAS QUE HACEN FELICES',
+    copy: 'Ingredientes reales, mejores momentos.',
+    cta: 'Ver menú', section: 'Más pedidos',
+    nav: ['Inicio', 'Menú', 'Buscar', 'Pedidos', 'Perfil'],
+    categoryIcons: ['🍔', '🍕', '🥩', '🥗', '🥤', '🍟'],
+    feature: 'Delivery en La Paz entre 30 y 60 minutos',
+    optionLabel: 'Tamaño, porción o combo', contactLabel: 'Pedir por WhatsApp',
+  },
 };
 
 const secondaryPromos: Record<string, { eyebrow: string; title: string; copy: string; cta: string }> = {
@@ -480,6 +530,11 @@ const secondaryPromos: Record<string, { eyebrow: string; title: string; copy: st
   muebleria: { eyebrow: 'Diseño para vivir mejor', title: 'ESPACIOS CON PERSONALIDAD', copy: 'Combina muebles, materiales y acabados para transformar tu hogar.', cta: 'Inspirarme' },
   repuestos: { eyebrow: 'Conduce con confianza', title: 'LISTO PARA CUALQUIER CAMINO', copy: 'Frenos, lubricantes, baterías y llantas compatibles con tu vehículo.', cta: 'Ver repuestos' },
   floreria: { eyebrow: 'Detalles con intención', title: 'HAZ ESPECIAL CUALQUIER OCASIÓN', copy: 'Elige flores, mensaje y complemento para una entrega inolvidable.', cta: 'Crear mi detalle' },
+  electronica: { eyebrow: 'Equipos conectados', title: 'TECNOLOGÍA HOY, MÁS POSIBILIDADES MAÑANA', copy: 'Compara funciones, compatibilidad y garantía antes de decidir.', cta: 'Comparar equipos' },
+  minimarket: { eyebrow: 'Compra fácil y rápida', title: 'TU HOGAR EN BUENAS MANOS', copy: 'Completa tu despensa y recibe productos frescos en tu zona.', cta: 'Armar mi pedido' },
+  barberia: { eyebrow: 'Más que un corte', title: 'ESTILO QUE TE HACE SENTIR BIEN', copy: 'Elige profesional, fecha y horario para tu próxima visita.', cta: 'Reservar cita' },
+  moda: { eyebrow: 'Ideas para combinar', title: 'TU ESTILO EN CADA MOMENTO', copy: 'Descubre prendas versátiles y encuentra tu talla ideal.', cta: 'Ver looks' },
+  restaurante: { eyebrow: 'Combos para compartir', title: 'BUENA COMIDA, MEJORES MOMENTOS', copy: 'Personaliza tu plato y pide en pocos pasos.', cta: 'Elegir mi combo' },
 };
 
 const go = (path = '') => { window.location.hash = path ? '#/' + path : '#/'; };

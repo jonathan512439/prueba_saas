@@ -100,7 +100,8 @@ export const rubros: Rubro[] = source.map((item, index) => ({
     'educacion', 'inmobiliaria', 'hotel', 'foto-video-dj', 'clinica-pet',
     'imprenta', 'alquiler-eventos', 'optica', 'jugueteria', 'deportes',
     'pet-shop', 'libreria', 'pasteleria', 'muebleria', 'repuestos',
-    'floreria', 'dental', 'canchas', 'ferreteria',
+    'floreria', 'electronica', 'minimarket', 'barberia', 'moda',
+    'restaurante', 'dental', 'canchas', 'ferreteria',
   ].includes(item[0]),
 }));
 
@@ -537,6 +538,66 @@ export const pilotCatalogs: Record<string, PilotCatalog> = {
       { id:'caja-romance', name:'Caja Romance completa', subtitle:'Flores, chocolates y peluche en un solo detalle', price:420, rating:4.9, stock:'7 disponibles', image:photo('floreria'), variants:['Rosa','Rojo','Mixto'], attributes:[['Incluye','Flores + chocolates + peluche'],['Tamaño','Mediano'],['Caja','Rígida premium'],['Mensaje','Personalizable'],['Preparación','3 horas'],['Entrega','Delivery o recojo']] },
       { id:'peluche-osito', name:'Osito de peluche con tarjeta', subtitle:'Un complemento tierno para cualquier ocasión', price:180, rating:4.8, stock:'14 unidades', badge:'Complemento favorito', image:photo('floreria'), variants:['Beige','Café','Rosa'], attributes:[['Altura','40 cm'],['Material','Felpa hipoalergénica'],['Tarjeta','Incluida'],['Empaque','Bolsa de regalo'],['Edad','3+ años'],['Entrega','Disponible hoy']] },
       { id:'ramo-celebracion', name:'Ramo Celebración', subtitle:'Flores de temporada llenas de color', price:280, rating:4.8, stock:'Producción diaria', image:photo('floreria'), variants:['Pastel','Vibrante','Blanco y verde'], attributes:[['Flores','Selección de temporada'],['Tamaño','Mediano'],['Ocasión','Cumpleaños / felicitación'],['Envoltura','Papel premium'],['Mensaje','Incluido'],['Duración','5–8 días con cuidados']] },
+    ],
+  },
+  electronica: {
+    id: 'electronica', hero: photo('electronica'), kicker: 'Tecnología que se adapta a tu vida',
+    heroTitle: 'Sonido, potencia y conexión sin límites.',
+    heroCopy: 'Compara modelos, capacidad, conectividad y garantía antes de elegir tu próximo equipo.',
+    categories: ['Todo', 'Celulares', 'Laptops', 'Audio', 'Cámaras', 'Gaming', 'Smartwatches', 'Hogar inteligente'], action: 'Ver tecnología',
+    products: [
+      { id:'auriculares-pulse-x5', name:'Auriculares Pulse X5', subtitle:'Audio inalámbrico con cancelación de ruido', price:2299, rating:4.9, stock:'9 unidades', badge:'Más vendido', image:photo('electronica'), variants:['Negro','Plata','Azul'], attributes:[['Marca','TechMás'],['Modelo','Pulse X5'],['Batería','Hasta 30 horas'],['Conectividad','Bluetooth 5.3'],['Compatibilidad','iOS / Android / Windows'],['Garantía','2 años']] },
+      { id:'smartphone-nova', name:'Smartphone Nova 5G', subtitle:'Pantalla fluida, gran cámara y rendimiento diario', price:3290, rating:4.8, stock:'12 unidades', image:photo('electronica'), variants:['128 GB','256 GB','512 GB'], attributes:[['Pantalla','6,6″ OLED'],['Memoria RAM','8 GB'],['Cámara','50 MP'],['Conectividad','5G / Wi-Fi 6'],['Batería','5.000 mAh'],['Garantía','12 meses']] },
+      { id:'smartwatch-active', name:'Smartwatch Active S', subtitle:'Salud, deporte y notificaciones en tu muñeca', price:1190, rating:4.8, stock:'15 unidades', badge:'Vida activa', image:photo('electronica'), variants:['Negro','Grafito','Rosa'], attributes:[['Pantalla','AMOLED 1,4″'],['Sensores','Ritmo + oxígeno'],['Resistencia','5 ATM'],['GPS','Integrado'],['Batería','Hasta 7 días'],['Compatibilidad','Android / iOS']] },
+      { id:'camara-mirrorless', name:'Cámara Mirrorless M20', subtitle:'Fotografía 4K compacta para crear más', price:4790, rating:4.9, stock:'5 unidades', image:photo('electronica'), variants:['Solo cuerpo','Kit 18–55 mm'], attributes:[['Sensor','APS-C 24 MP'],['Video','4K'],['Enfoque','Detección de rostro'],['Conectividad','Wi-Fi / Bluetooth'],['Incluye','Batería + cargador'],['Garantía','18 meses']] },
+    ],
+  },
+  minimarket: {
+    id: 'minimarket', hero: photo('minimarket'), kicker: 'Tu despensa completa, siempre cerca',
+    heroTitle: 'Todo lo que necesitas en un solo lugar.',
+    heroCopy: 'Productos esenciales, precios visibles, ofertas semanales y entrega rápida en tu zona.',
+    categories: ['Todo', 'Abarrotes', 'Bebidas', 'Lácteos', 'Snacks', 'Limpieza', 'Frutas y verduras'], action: 'Ver ofertas',
+    products: [
+      { id:'leche-entera', name:'Leche entera UHT', subtitle:'Larga vida y fortificada para toda la familia', price:7.5, rating:4.8, stock:'48 unidades', badge:'Precio diario', image:photo('minimarket'), variants:['1 litro','Pack × 6'], attributes:[['Marca','MiMarket Selección'],['Contenido neto','1 litro'],['Variedad','Entera'],['Presentación','Unidad / pack'],['Unidad','ml'],['Vencimiento','Ver envase al recibir']] },
+      { id:'arroz-premium', name:'Arroz grano largo premium', subtitle:'Granos seleccionados para cada comida', price:15, rating:4.8, stock:'32 bolsas', image:photo('minimarket'), variants:['1 kg','5 kg'], attributes:[['Marca','Cosecha Clara'],['Contenido neto','1 kg'],['Variedad','Grano largo'],['Presentación','Bolsa sellada'],['Unidad','kg'],['Origen','Nacional']] },
+      { id:'gaseosa-pack', name:'Pack de gaseosa familiar', subtitle:'Seis botellas para compartir', price:42, rating:4.7, stock:'18 packs', badge:'Oferta semanal', image:photo('minimarket'), variants:['Cola','Naranja','Mixto'], attributes:[['Contenido','6 × 600 ml'],['Sabor','A elección'],['Presentación','Pack'],['Unidad','ml'],['Conservación','Lugar fresco'],['Sustitución','Sabor equivalente opcional']] },
+      { id:'canasta-familiar', name:'Canasta familiar esencial', subtitle:'Abarrotes y frescos para reponer la despensa', price:165, rating:4.9, stock:'Preparación inmediata', image:photo('minimarket'), variants:['Básica','Completa'], attributes:[['Incluye','12 productos esenciales'],['Peso estimado','9 kg'],['Presentación','Canasta surtida'],['Frescos','Selección del día'],['Sustituciones','Con autorización'],['Delivery','30–60 minutos']] },
+    ],
+  },
+  barberia: {
+    id: 'barberia', hero: photo('barberia'), kicker: 'Estilo, precisión y atención profesional',
+    heroTitle: 'Un buen estilo siempre habla de ti.',
+    heroCopy: 'Elige servicio, profesional, fecha y horario para reservar sin llamadas ni esperas.',
+    categories: ['Todo', 'Cortes', 'Barba', 'Estética', 'Coloración', 'Paquetes'], action: 'Reservar una cita',
+    products: [
+      { id:'corte-clasico', name:'Corte Clásico', subtitle:'Corte personalizado, lavado y peinado', price:45, rating:4.9, stock:'Horarios hoy', badge:'Más reservado', image:photo('barberia'), variants:['Carlos · 10:00','Mateo · 12:00','Andrés · 16:00'], attributes:[['Profesional','Carlos Méndez · Senior'],['Servicio','Corte clásico'],['Duración','30 minutos'],['Incluye','Lavado + peinado'],['Sede','Centro'],['Domicilio','No disponible']] },
+      { id:'arreglo-barba', name:'Arreglo de barba', subtitle:'Perfilado, tratamiento y acabado profesional', price:35, rating:4.8, stock:'5 horarios', image:photo('barberia'), variants:['Carlos · 11:00','Mateo · 15:00'], attributes:[['Profesional','A elección'],['Servicio','Barba'],['Duración','30 minutos'],['Incluye','Perfilado + bálsamo'],['Estilo','Personalizado'],['Sede','Centro']] },
+      { id:'combo-corte-barba', name:'Combo corte + barba', subtitle:'Imagen completa en una sola reserva', price:70, rating:4.9, stock:'4 horarios mañana', badge:'Mejor valor', image:photo('barberia'), variants:['Carlos · 09:00','Andrés · 14:00','Mateo · 17:00'], attributes:[['Paquete','Corte + barba'],['Duración','60 minutos'],['Incluye','Lavado + tratamiento'],['Profesional','Barbero senior'],['Extras','Mascarilla opcional'],['Sede','Centro']] },
+      { id:'coloracion-premium', name:'Coloración premium', subtitle:'Tono, aplicación y cuidado posterior', price:120, rating:4.8, stock:'Agenda esta semana', image:photo('barberia'), variants:['Natural','Cobertura de canas','Diseño creativo'], attributes:[['Servicio','Coloración'],['Duración','90 minutos'],['Profesional','Especialista de color'],['Incluye','Diagnóstico + aplicación'],['Producto','Profesional'],['Reserva','Con anticipación']] },
+    ],
+  },
+  moda: {
+    id: 'moda', hero: photo('moda'), kicker: 'Nueva colección · estilo para cada momento',
+    heroTitle: 'Moda que te inspira.',
+    heroCopy: 'Encuentra tu talla, elige el color y arma combinaciones que se sienten como tú.',
+    categories: ['Todo', 'Tops', 'Pantalones', 'Vestidos', 'Chaquetas', 'Accesorios'], action: 'Ver colección',
+    products: [
+      { id:'blazer-clasico', name:'Blazer Clásico', subtitle:'Corte versátil para looks formales y casuales', price:240, rating:4.9, stock:'En stock', badge:'Nuevo', image:photo('moda'), variants:['S','M','L','XL'], attributes:[['Color','Beige / negro / rosa'],['Material','Mezcla de lino'],['Estilo','Casual / formal'],['Marca','Luna Boutique'],['Temporada','Todo el año'],['Calce','Semientallado']] },
+      { id:'top-basico-rib', name:'Top Básico Rib', subtitle:'Suave, combinable y cómodo para todos los días', price:85, rating:4.8, stock:'18 unidades', image:photo('moda'), variants:['XS','S','M','L'], attributes:[['Color','Blanco / negro / rosa'],['Material','Algodón stretch'],['Estilo','Casual'],['Marca','Luna Essentials'],['Temporada','Primavera / verano'],['Calce','Ajustado']] },
+      { id:'jean-wide-leg', name:'Jean Wide Leg', subtitle:'Tiro alto y silueta amplia contemporánea', price:160, rating:4.8, stock:'12 unidades', badge:'Favorito', image:photo('moda'), variants:['36','38','40','42','44'], attributes:[['Color','Azul medio / negro'],['Material','Denim 100 % algodón'],['Estilo','Urbano'],['Tiro','Alto'],['Temporada','Todo el año'],['Calce','Wide leg']] },
+      { id:'vestido-midi', name:'Vestido Midi Aura', subtitle:'Movimiento suave para ocasiones especiales', price:220, rating:4.9, stock:'7 unidades', image:photo('moda'), variants:['S','M','L'], attributes:[['Color','Terracota / negro'],['Material','Satén mate'],['Estilo','Elegante'],['Largo','Midi'],['Temporada','Primavera / verano'],['Cuidado','Lavado delicado']] },
+    ],
+  },
+  restaurante: {
+    id: 'restaurante', hero: photo('restaurante'), kicker: 'Sabores preparados al momento',
+    heroTitle: 'Hamburguesas que hacen felices.',
+    heroCopy: 'Elige tamaño, extras y acompañamientos; recibe tu pedido o recógelo en el local.',
+    categories: ['Todo', 'Hamburguesas', 'Pizzas', 'Parrillas', 'Ensaladas', 'Bebidas', 'Combos'], action: 'Ver menú',
+    products: [
+      { id:'hamburguesa-clasica', name:'Hamburguesa Clásica', subtitle:'Carne, queso, vegetales frescos y salsa especial', price:35, rating:4.9, stock:'Disponible · 20 min', badge:'Más pedida', image:photo('restaurante'), variants:['Clásica','Doble','Combo + papas'], attributes:[['Porción','Personal'],['Ingredientes','Carne 150 g + queso + vegetales'],['Acompañamiento','Papas opcionales'],['Picante','Sin picante'],['Extras','Queso / tocino'],['Preparación','15–20 minutos']] },
+      { id:'pizza-margherita', name:'Pizza Margherita', subtitle:'Tomate, mozzarella fresca y albahaca', price:55, rating:4.9, stock:'Disponible · 25 min', badge:'Vegetariana', image:photo('restaurante'), variants:['Personal','Mediana','Familiar'], attributes:[['Porciones','6 / 8 / 12'],['Ingredientes','Tomate + mozzarella + albahaca'],['Masa','Artesanal'],['Picante','Opcional'],['Extras','Aceitunas / champiñones'],['Preparación','20–25 minutos']] },
+      { id:'parrillada-casa', name:'Parrillada de la casa', subtitle:'Selección de carnes y guarniciones calientes', price:95, rating:4.8, stock:'Disponible · 30 min', image:photo('restaurante'), variants:['Para 1','Para 2','Familiar'], attributes:[['Porción','1–4 personas'],['Ingredientes','Res + pollo + chorizo'],['Acompañamientos','Papas + ensalada'],['Cocción','A elección'],['Salsas','Dos incluidas'],['Preparación','25–30 minutos']] },
+      { id:'ensalada-andina', name:'Ensalada Andina fresca', subtitle:'Quinua, vegetales, palta y aderezo cítrico', price:32, rating:4.8, stock:'Disponible · 12 min', image:photo('restaurante'), variants:['Clásica','Con pollo','Con queso'], attributes:[['Porción','Personal'],['Ingredientes','Quinua + vegetales + palta'],['Proteína','Opcional'],['Aderezo','Cítrico'],['Preferencia','Vegetariana'],['Preparación','10–12 minutos']] },
     ],
   },
   calzado: {
