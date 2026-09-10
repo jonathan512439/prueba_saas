@@ -8,6 +8,7 @@ import {
   Star, X,
 } from 'lucide-react';
 import type { PilotCatalog, Product, Rubro } from './catalog-data';
+import { MapsReviewButton } from './maps-review-button';
 
 type CartLine = { rubroId: string; productId: string; name: string; price: number; qty: number; variant: string };
 type CatalogMode = 'commerce' | 'appointment' | 'request' | 'parking';
@@ -228,6 +229,7 @@ function ReferenceHome({ rubro, catalog, theme, favorites, cart, onFavorite, not
           <button className="reference-mini-cart" onClick={() => go('catalogo/' + rubro.id + '/item/' + product.id)} aria-label={'Ver ' + product.name}><ShoppingCart /></button>
         </article>)}</div> : <div className="reference-empty"><Search /><b>No encontramos resultados</b><button onClick={() => setQuery('')}>Limpiar búsqueda</button></div>}
         <button className="reference-feature" onClick={() => notify(theme.feature)}><ShieldCheck /><span><b>{theme.feature}</b><small>Información clara antes de elegir</small></span><ChevronRight /></button>
+        <MapsReviewButton brand={rubro.brand} notify={notify} compact />
       </section>
 
       <ReferenceNav theme={theme} rubro={rubro} />

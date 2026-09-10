@@ -59,3 +59,13 @@
 - Fidelidad visual: cabeceras oscuras, categorías circulares, banners compactos, grillas densas de tres tarjetas, navegación móvil inferior y CTA principal adaptado al rubro.
 - Ajuste responsive: ancho móvil estabilizado, categorías con desplazamiento horizontal y tarjetas sin desbordamiento.
 - Verificación local: lint correcto, compilación estática correcta, servidor HTTP 200 y captura móvil revisada.
+
+## Mejora transversal — Calificación en Google Maps — 2026-09-09
+
+- Estado: implementada en las portadas de los 45 catálogos.
+- Componente reutilizable: `MapsReviewButton`, compartido por los catálogos personalizados y las vistas genéricas.
+- Ubicación: después del bloque de confianza en los catálogos móviles y antes del listado de productos en los catálogos generales.
+- Contenido: icono de ubicación, distintivo de estrella, nombre del negocio, valoración visual y franja inspirada en los colores de Google.
+- Interacción actual: muestra una confirmación simulada con el nombre del negocio; no abre una URL externa.
+- Preparación futura: el controlador puede sustituirse por el enlace específico de Google Maps de cada comercio sin modificar el diseño.
+- Validación: lint y compilación de producción correctos.
