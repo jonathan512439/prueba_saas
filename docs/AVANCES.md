@@ -222,7 +222,7 @@
 
 ## Piloto visual premium del catálogo SaaS — 2026-09-10
 
-- Estado: implementada y validada técnicamente; publicación en curso.
+- Estado: implementada, validada técnicamente y publicada.
 - Alcance: Moda, Restaurante, Barbería, Electrónica, Hotel y Juguetería.
 - Modelo: se conserva un único componente de catálogo; cada negocio recibe un preset visual controlado, no una landing independiente.
 - Prioridad móvil: catálogo de ancho completo, encabezado compacto, categorías táctiles, dos columnas de productos, segundo banner y acciones inferiores adaptadas al área segura.
@@ -231,3 +231,5 @@
 - Interacciones conservadas: búsqueda, categorías, favoritos, carrito, detalle, variantes, cantidad, reserva o consulta, WhatsApp, compartir y reseña simulada en Maps.
 - Validación previa al despliegue: `oxlint`, compilación de producción y generación estática con base `/prueba_saas` completadas sin errores.
 - Validación visual asistida: pendiente de revisión en los enlaces públicos porque esta sesión no dispone de una superficie de navegador habilitada.
+- GitHub: commit `f3384a0d11cce80625882fc6274184857685eb98`; workflow `Deploy GitHub Pages` #34465148545 completado correctamente; URL pública respondió HTTP 200.
+- Sites: versión privada 6 (`appgprj_6aa1d744bdb4819188d8cf7320cb2418~appgver_6a142fcbaf1081918845963c1ced99c5`) publicada correctamente en el proyecto existente.
