@@ -101,7 +101,10 @@
 
 ## Fase 4 — Comercio, experiencias, formación y propiedades — 2026-09-10
 
-- Estado: implementada; pendiente de publicación al iniciar este registro.
+- Estado: implementada, validada y publicada en GitHub Pages y Sites.
+- Commit funcional: `599d167` (`Implement phase 4 catalog experiences`).
+- Workflow de Pages: ejecución `34440147012`, completada correctamente.
+- Versión privada de Sites: versión 3, desplegada correctamente.
 - Rubros: Distribuidores mayoristas / B2B, Cerámicas / pisos / construcción, Salas de juego, Artesanías / personalizados, Turismo / tours, Educación / cursos, Inmobiliaria y Hotel / alojamiento.
 - Referencias auditadas: láminas 18 a 25.
 - Activos: ocho banners fotográficos originales, con composición horizontal y zona segura para titulares; el activo de Educación fue regenerado para eliminar rótulos incrustados.
@@ -116,3 +119,23 @@
 - Diseño: ocho paletas específicas, cabeceras oscuras, categorías circulares, doble banner, tarjetas densas y ficha móvil detallada.
 - Navegación funcional: portada, categorías, búsqueda, favoritos, pedidos o reservas, detalle, selectores, contacto por WhatsApp y reseña simulada de Google Maps.
 - Cobertura acumulada: 27 de 45 rubros personalizados; quedan 18 para las fases siguientes.
+
+## Fase 5 — Producción, cuidado, impresión y comercio familiar — 2026-09-10
+
+- Estado: implementada, validada y publicada en GitHub Pages y Sites.
+- Rubros: Fotografía / video / DJ, Veterinaria / clínica pet, Imprenta / publicidad, Alquiler para fiestas / eventos, Óptica, Juguetería / bebés, Deportes / fitness y Pet shop / mascotas.
+- Referencias auditadas: láminas 26 a 33.
+- Activos: ocho banners fotográficos originales, horizontales y sin textos incrustados, preparados con zona segura para titulares HTML.
+- Contenido: 32 fichas nuevas, cuatro por rubro, con precios en bolivianos, calificación, disponibilidad, variantes y atributos especializados.
+- Audiovisual: tipo de cobertura, duración, equipo, profesional, entrega, estilo, capacidad y extras.
+- Clínica pet: especie, etapa, peso, historial o registro, profesional, cita, modalidad, preparación y condiciones de cuidado.
+- Imprenta: medida, material, gramaje, caras, acabado, cantidad mínima, diseño y plazo de entrega.
+- Eventos: unidades, capacidad, dimensiones, material, montaje, transporte, depósito, duración y disponibilidad por fecha.
+- Óptica: forma, material, color, medidas, género, protección, graduación compatible y accesorios incluidos.
+- Juguetería: edad y etapa recomendadas, material, piezas, medidas, seguridad, certificación y color.
+- Deportes: disciplina, nivel, talla, material, tecnología, peso, uso y accesorios.
+- Pet shop: tipo de mascota, etapa, tamaño, sabor, peso o presentación, nutrición, higiene y compatibilidad.
+- Diseño: ocho identidades cromáticas, cabeceras adaptadas, categorías específicas, dos banners, grilla densa y detalle móvil.
+- Flujos previstos: reserva por fecha para servicios y alquileres; configuración y cotización para impresión; selección de variantes y pedido para óptica, juguetes, deportes y mascotas.
+- Validación: lint, compilación de producción y paquete estático de Pages completados correctamente.
+- Cobertura acumulada: 35 de 45 rubros personalizados; quedan 10.
