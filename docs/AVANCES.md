@@ -146,7 +146,9 @@
 
 ## Fase 6 — Comercio especializado, celebraciones, hogar y regalos — 2026-09-10
 
-- Estado: implementada; validación y publicación en curso.
+- Estado: implementada, validada y publicada en GitHub Pages; actualización privada de Sites pendiente por acceso del conector.
+- Commit funcional: `494538d` (`Implement phase 6 catalog experiences`).
+- Workflow de Pages: ejecución `34447863310`, completada correctamente.
 - Rubros: Librería / papelería, Pastelería / repostería, Mueblería / decoración, Repuestos automotrices / motos y Florería / regalos.
 - Referencias auditadas: láminas 34 a 38.
 - Activos: cinco banners fotográficos originales, horizontales, sin marcas ni texto incrustado y con zona segura para titulares HTML.
@@ -159,4 +161,7 @@
 - Flujos: compra y configuración para Librería, Mueblería y Repuestos; programación por fecha para Pastelería y Florería.
 - Diseño: cinco identidades cromáticas, encabezado con reseña simulada de Google Maps, categorías específicas, dos banners, grilla densa y ficha detallada móvil.
 - Navegación prevista: portada, categorías, búsqueda, favoritos o pedidos, ficha, selección de opciones y contacto por WhatsApp.
+- Validación: lint, compilación de producción y paquete estático de Pages completados correctamente.
+- Verificación pública: portada y los cinco banners de la fase responden con HTTP 200.
+- Sites: el manifiesto conserva el proyecto existente, pero el conector actual respondió `project_not_found`; no se creó otro proyecto para evitar duplicados.
 - Cobertura acumulada: 40 de 45 rubros personalizados; quedan 5 para la Fase 7.
