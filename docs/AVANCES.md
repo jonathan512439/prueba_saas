@@ -308,7 +308,7 @@
 
 ## Sistema premium extendido a todos los catálogos — 2026-09-10
 
-- Estado: implementada y validada; publicación en curso.
+- Estado: implementada, validada y publicada.
 - Cobertura: los 45 catálogos disponibles usan ahora el sistema visual premium; se migran los 38 que conservaban la presentación anterior.
 - Estructura compartida: encabezado compacto, botón de reseña, buscador, banner principal de tamaño uniforme, franja de horario, categorías, productos compactos, segundo banner y navegación inferior.
 - Variantes: cada rubro conserva su identidad mediante siete familias visuales: editorial, gastronómica, servicios, técnica, experiencias, amigable y clínica.
@@ -316,3 +316,5 @@
 - Patrones e imágenes: se mantienen los patrones de iconos y todos los recursos visuales existentes.
 - Banner principal: permanece en 220 px en móvil y 300 px en escritorio.
 - Validación: cobertura comprobada para los 45 catálogos, linter y compilación estática completados sin errores.
+- GitHub: commit funcional `bde66dc5f31e9a959ebf364a90d4f6f4ca803f10`; workflow `Deploy GitHub Pages` #34527019087 completado correctamente.
+- Sites: versión privada 12 (`appgprj_6aa1d744bdb4819188d8cf7320cb2418~appgver_312be1a7fe34819183bdb8c23072cab2`) publicada correctamente.
