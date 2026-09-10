@@ -69,3 +69,10 @@
 - Interacción actual: muestra una confirmación simulada con el nombre del negocio; no abre una URL externa.
 - Preparación futura: el controlador puede sustituirse por el enlace específico de Google Maps de cada comercio sin modificar el diseño.
 - Validación: lint y compilación de producción correctos.
+
+### Mejora de reconocimiento del CTA — 2026-09-09
+
+- Jerarquía reforzada con pin de Maps, franja multicolor, estrellas, calificación y flecha de avance.
+- Microcopy orientado al cliente: “Tu opinión cuenta” y “Déjanos tu reseña en Google Maps”.
+- Estados de interacción añadidos para hover, foco mediante teclado y pulsación táctil.
+- Versión móvil con texto principal siempre visible y versión de escritorio integrada en la barra superior.

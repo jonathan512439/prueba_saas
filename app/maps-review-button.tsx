@@ -10,12 +10,16 @@ export function MapsReviewButton({ brand, notify, header = false }: {
   return <button
     type="button"
     className={'maps-review-button ' + (header ? 'is-header' : '')}
-    onClick={() => notify(`Simulación: se abrirá Google Maps para calificar a ${brand}`)}
+    onClick={() => notify(`Aquí se abrirá Google Maps para dejar tu reseña de ${brand}`)}
     aria-label={`Calificar a ${brand} en Google Maps`}
   >
     <span className="maps-review-pin" aria-hidden="true"><MapPin /><i><Star fill="currentColor" /></i></span>
-    <span className="maps-review-copy"><b>Califica este negocio en Google Maps</b><small>Comparte tu experiencia con {brand}</small></span>
-    <span className="maps-review-stars" aria-hidden="true">★★★★★</span>
+    <span className="maps-review-copy">
+      <small className="maps-review-kicker">TU OPINIÓN CUENTA</small>
+      <b>Déjanos tu reseña en Google Maps</b>
+      <small>Califica tu experiencia con {brand}</small>
+    </span>
+    <span className="maps-review-stars" aria-hidden="true"><b>5.0</b> ★★★★★</span>
     <ChevronRight className="maps-review-arrow" aria-hidden="true" />
   </button>;
 }
