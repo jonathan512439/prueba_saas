@@ -263,7 +263,7 @@
 
 ## Compactación de títulos y tarjetas premium — 2026-09-10
 
-- Estado: implementada y validada; publicación en curso.
+- Estado: implementada, validada y publicada.
 - Alcance: los siete catálogos con preset premium.
 - Banner superior: el título queda limitado al 60% del ancho disponible y reduce su escala tipográfica en móvil y escritorio.
 - Contenido del banner: texto secundario y llamada a la acción compactados para mantener aire alrededor de la fotografía.
@@ -272,3 +272,5 @@
 - Veterinaria: accesos rápidos reducidos y tarjetas horizontales más cortas en ambos tamaños de pantalla.
 - Patrones: permanecen activos detrás del contenido en todos los catálogos.
 - Validación: linter y compilación estática para GitHub Pages completados sin errores.
+- GitHub: commit funcional `31cbe62bb7d69ede34cffc425f5f25be28da9522`; workflow `Deploy GitHub Pages` #34513321620 completado correctamente.
+- Sites: versión privada 9 (`appgprj_6aa1d744bdb4819188d8cf7320cb2418~appgver_26f8ab7e1fa08191924b151f5d046c75`) publicada correctamente.
