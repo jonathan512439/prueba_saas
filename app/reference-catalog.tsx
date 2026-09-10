@@ -37,15 +37,19 @@ type Theme = {
 
 const PATTERN_ICON_COUNT = 240;
 
-const premiumVisualPresets: Partial<Record<string, CatalogVisualPreset>> = {
-  moda: 'editorial',
-  restaurante: 'gastronomic',
-  barberia: 'service',
-  electronica: 'technical',
-  hotel: 'experience',
-  jugueteria: 'friendly',
-  veterinaria: 'clinical',
+const premiumPresetGroups: Record<CatalogVisualPreset, readonly string[]> = {
+  editorial: ['moda', 'calzado', 'cajas-americanas', 'artesanias', 'optica', 'deportes', 'libreria', 'muebleria', 'floreria'],
+  gastronomic: ['restaurante', 'licoreria', 'pasteleria', 'minimarket'],
+  service: ['barberia', 'servicios-hogar', 'carpinteria', 'consultoria', 'mudanzas', 'gimnasio', 'educacion', 'foto-video-dj', 'imprenta', 'alquiler-eventos'],
+  technical: ['electronica', 'computacion', 'seguridad', 'partes-electricas', 'mayorista', 'ceramicas', 'repuestos', 'ferreteria', 'streaming'],
+  experience: ['hotel', 'estacionamientos', 'agencia-viajes', 'tours', 'inmobiliaria', 'canchas', 'sala-juegos'],
+  friendly: ['jugueteria', 'entretenimiento-infantil', 'pet-shop'],
+  clinical: ['veterinaria', 'clinica-pet', 'dental'],
 };
+
+const premiumVisualPresets = Object.fromEntries(
+  Object.entries(premiumPresetGroups).flatMap(([preset, ids]) => ids.map((id) => [id, preset])),
+) as Record<string, CatalogVisualPreset>;
 
 const premiumSchedules: Record<string, PremiumSchedule> = {
   moda: {
@@ -68,6 +72,21 @@ const premiumSchedules: Record<string, PremiumSchedule> = {
   },
   veterinaria: {
     title: 'Horario de atención', hours: 'Lunes a sábado · 08:00–20:00', status: 'Atendiendo',
+  },
+};
+
+const premiumScheduleDefaults: Record<CatalogMode, PremiumSchedule> = {
+  commerce: {
+    title: 'Horario de atención', hours: 'Lunes a sábado · 09:00–20:00', status: 'Abierto hoy',
+  },
+  appointment: {
+    title: 'Horario de reservas', hours: 'Lunes a sábado · 08:00–20:00', status: 'Reservas hoy',
+  },
+  request: {
+    title: 'Horario de atención', hours: 'Lunes a sábado · 08:30–18:30', status: 'Atendiendo',
+  },
+  parking: {
+    title: 'Acceso disponible', hours: 'Todos los días · atención 24 horas', status: 'Disponible',
   },
 };
 
@@ -637,7 +656,7 @@ function ReferenceHome({ rubro, catalog, theme, favorites, cart, onFavorite, not
   const cartCount = cart.reduce((sum, line) => sum + line.qty, 0);
   const promo = secondaryPromos[rubro.id] ?? secondaryPromos.calzado;
   const promoProduct = catalog.products[1] ?? catalog.products[0];
-  const schedule = premiumSchedules[rubro.id];
+  const schedule = premiumSchedules[rubro.id] ?? premiumScheduleDefaults[theme.mode];
 
   return <main className={catalogStageClass(rubro.id)} style={{ '--ref': rubro.color, '--ref-accent': rubro.accent } as React.CSSProperties}>
     <section className={'reference-phone ' + (theme.categoryFirst ? 'categories-first' : '')}>

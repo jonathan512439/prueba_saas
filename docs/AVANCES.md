@@ -305,3 +305,14 @@
 - Validación: linter y compilación estática para GitHub Pages completados sin errores.
 - GitHub: commit funcional `0801be9886c08f6324b3c72f363b7609a1463ff8`; workflow `Deploy GitHub Pages` #34524597488 completado correctamente.
 - Sites: versión privada 11 (`appgprj_6aa1d744bdb4819188d8cf7320cb2418~appgver_3e4f935c33d48191b0b4ab31c6ff2222`) publicada correctamente.
+
+## Sistema premium extendido a todos los catálogos — 2026-09-10
+
+- Estado: implementada y validada; publicación en curso.
+- Cobertura: los 45 catálogos disponibles usan ahora el sistema visual premium; se migran los 38 que conservaban la presentación anterior.
+- Estructura compartida: encabezado compacto, botón de reseña, buscador, banner principal de tamaño uniforme, franja de horario, categorías, productos compactos, segundo banner y navegación inferior.
+- Variantes: cada rubro conserva su identidad mediante siete familias visuales: editorial, gastronómica, servicios, técnica, experiencias, amigable y clínica.
+- Horarios: todos los catálogos muestran horario y estado; los rubros con datos específicos los conservan y los demás usan una configuración coherente con su modalidad.
+- Patrones e imágenes: se mantienen los patrones de iconos y todos los recursos visuales existentes.
+- Banner principal: permanece en 220 px en móvil y 300 px en escritorio.
+- Validación: cobertura comprobada para los 45 catálogos, linter y compilación estática completados sin errores.

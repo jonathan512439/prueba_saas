@@ -461,7 +461,7 @@
   font-size: 13px;
 }
 
-/* Six premium skins, all sharing the same catalog markup. */
+/* Seven premium skins, all sharing the same catalog markup. */
 .site-shell .reference-stage.catalog-premium.premium-editorial {
   --premium-page: #f6f1ec;
   --premium-surface: #fffdf9;
@@ -577,7 +577,7 @@
   background: #fff8d8;
 }
 
-/* Veterinary: a visibly different care-first catalog, still using the shared SaaS markup. */
+/* Clinical catalogs: a care-first skin using the shared SaaS markup. */
 .site-shell .reference-stage.catalog-premium.premium-clinical {
   --premium-page: #edf8f6;
   --premium-surface: #fff;
@@ -651,7 +651,7 @@
 }
 
 .site-shell .reference-stage.catalog-premium.premium-clinical .reference-hero article::before {
-  content: 'VETCARE · SALUD ANIMAL';
+  content: 'SALUD · ATENCIÓN PROFESIONAL';
   display: inline-flex;
   margin-bottom: 10px;
   padding: 6px 10px;
@@ -663,6 +663,18 @@
   font-weight: 900;
   letter-spacing: .13em;
   backdrop-filter: blur(10px);
+}
+
+.site-shell .reference-stage.reference-veterinaria .reference-hero article::before {
+  content: 'VETCARE · SALUD ANIMAL';
+}
+
+.site-shell .reference-stage.reference-clinica-pet .reference-hero article::before {
+  content: 'CLÍNICA PET · CUIDADO ANIMAL';
+}
+
+.site-shell .reference-stage.reference-dental .reference-hero article::before {
+  content: 'ODONTOLOGÍA · SALUD BUCAL';
 }
 
 .site-shell .reference-stage.catalog-premium.premium-clinical .reference-hero h1 {
