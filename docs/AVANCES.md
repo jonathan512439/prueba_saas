@@ -246,3 +246,15 @@
 - Validación: linter, compilación de producción y paquete estático para GitHub Pages completados sin errores.
 - GitHub: commit funcional `5ae8f3ce02b69ca50c615653fed48be07468e704`; workflow `Deploy GitHub Pages` #34481443431 completado correctamente.
 - Sites: versión privada 7 (`appgprj_6aa1d744bdb4819188d8cf7320cb2418~appgver_05945aad89488191904523e1127bfa93`) publicada correctamente.
+
+## Unificación de banners premium — 2026-09-10
+
+- Estado: implementada y validada; publicación en curso.
+- Alcance: Moda, Restaurante, Barbería, Electrónica, Hotel, Juguetería y Veterinaria.
+- Cambio: el banner superior y el banner inferior usan una única variable de altura compartida.
+- Móvil: ambos banners tienen 220 px de alto y el mismo ancho útil de catálogo.
+- Escritorio: ambos banners tienen 300 px de alto y márgenes laterales equivalentes.
+- Forma: ambos banners comparten también el radio de esquina definido por cada preset.
+- Veterinaria: tipografía del hero reajustada para conservar legibilidad sin perder sus accesos rápidos.
+- Patrones: los patrones de iconos permanecen habilitados en todos los catálogos.
+- Validación: linter y compilación estática de GitHub Pages completados sin errores.

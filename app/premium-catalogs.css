@@ -5,6 +5,8 @@
   --premium-ink: #142333;
   --premium-muted: #697785;
   --premium-radius: 20px;
+  --premium-banner-height: 220px;
+  --premium-banner-radius: 23px;
   min-height: 100svh;
   padding: 0;
   background: var(--premium-page);
@@ -119,9 +121,9 @@
 }
 
 .site-shell .reference-stage.catalog-premium .reference-hero {
-  height: clamp(360px, 92vw, 430px);
-  margin: 0 10px;
-  border-radius: 0 0 26px 26px;
+  height: var(--premium-banner-height);
+  margin: 0 12px;
+  border-radius: var(--premium-banner-radius);
   box-shadow: 0 18px 42px #102a3c24;
 }
 
@@ -290,9 +292,9 @@
 }
 
 .site-shell .reference-stage.catalog-premium .reference-secondary-banner {
-  height: 220px;
+  height: var(--premium-banner-height);
   margin-top: 26px;
-  border-radius: 23px;
+  border-radius: var(--premium-banner-radius);
   box-shadow: 0 16px 38px #102a3c20;
 }
 
@@ -485,11 +487,7 @@
   --premium-surface: #fffefb;
   --premium-ink: #153b2d;
   --premium-radius: 22px;
-}
-
-.site-shell .reference-stage.catalog-premium.premium-gastronomic .reference-hero,
-.site-shell .reference-stage.catalog-premium.premium-gastronomic .reference-secondary-banner {
-  border-radius: 25px;
+  --premium-banner-radius: 25px;
 }
 
 .site-shell .reference-stage.catalog-premium.premium-gastronomic .reference-product-image {
@@ -585,6 +583,7 @@
   --premium-ink: #083b3a;
   --premium-muted: #587573;
   --premium-radius: 22px;
+  --premium-banner-radius: 25px;
   --action: #08ad98;
   background:
     radial-gradient(circle at 100% 8%, #8fe4d557 0 16%, transparent 38%),
@@ -638,9 +637,7 @@
 
 .site-shell .reference-stage.catalog-premium.premium-clinical .reference-hero {
   order: 2;
-  height: clamp(410px, 112vw, 490px);
   margin: 12px;
-  border-radius: 30px;
   box-shadow: 0 22px 52px #06463e30;
 }
 
@@ -669,7 +666,7 @@
 
 .site-shell .reference-stage.catalog-premium.premium-clinical .reference-hero h1 {
   max-width: 360px;
-  font-size: clamp(36px, 10.5vw, 48px);
+  font-size: clamp(29px, 8.2vw, 36px);
   font-weight: 850;
   letter-spacing: -2px;
 }
@@ -935,10 +932,6 @@
   border-radius: 12px;
 }
 
-.site-shell .reference-stage.catalog-premium.premium-clinical .reference-secondary-banner {
-  border-radius: 25px;
-}
-
 .site-shell .reference-stage.catalog-premium.premium-clinical .reference-feature {
   color: #083f3c;
   border: 1px solid #cfe9e3;
@@ -970,6 +963,7 @@
 
 @media (min-width: 800px) {
   .site-shell .reference-stage.catalog-premium {
+    --premium-banner-height: 300px;
     padding: 30px;
   }
 
@@ -1007,9 +1001,9 @@
   }
 
   .site-shell .reference-stage.catalog-premium .reference-hero {
-    height: 430px;
-    margin: 0;
-    border-radius: 0 0 28px 28px;
+    height: var(--premium-banner-height);
+    margin: 0 34px;
+    border-radius: var(--premium-banner-radius);
   }
 
   .site-shell .reference-stage.catalog-premium .reference-hero > div {
@@ -1092,9 +1086,8 @@
   }
 
   .site-shell .reference-stage.catalog-premium.premium-clinical .reference-hero {
-    height: 520px;
-    margin: 16px 28px 0;
-    border-radius: 34px;
+    height: var(--premium-banner-height);
+    margin: 0 34px;
   }
 
   .site-shell .reference-stage.catalog-premium.premium-clinical .reference-hero article {
@@ -1104,7 +1097,7 @@
 
   .site-shell .reference-stage.catalog-premium.premium-clinical .reference-hero h1 {
     max-width: 610px;
-    font-size: clamp(54px, 5.4vw, 74px);
+    font-size: clamp(43px, 4.5vw, 58px);
   }
 
   .site-shell .reference-stage.catalog-premium.premium-clinical .vet-care-panel {
@@ -1162,7 +1155,7 @@
   }
 
   .site-shell .reference-stage.catalog-premium .reference-secondary-banner {
-    height: 300px;
+    height: var(--premium-banner-height);
     margin-top: 42px;
   }
 
