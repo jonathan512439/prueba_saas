@@ -249,7 +249,7 @@
 
 ## Unificación de banners premium — 2026-09-10
 
-- Estado: implementada y validada; publicación en curso.
+- Estado: implementada, validada y publicada.
 - Alcance: Moda, Restaurante, Barbería, Electrónica, Hotel, Juguetería y Veterinaria.
 - Cambio: el banner superior y el banner inferior usan una única variable de altura compartida.
 - Móvil: ambos banners tienen 220 px de alto y el mismo ancho útil de catálogo.
@@ -258,3 +258,5 @@
 - Veterinaria: tipografía del hero reajustada para conservar legibilidad sin perder sus accesos rápidos.
 - Patrones: los patrones de iconos permanecen habilitados en todos los catálogos.
 - Validación: linter y compilación estática de GitHub Pages completados sin errores.
+- GitHub: commit funcional `2383c502c634ca7d4314e5e195ff4b273aa8f8ad`; workflow `Deploy GitHub Pages` #34509209165 completado correctamente.
+- Sites: versión privada 8 (`appgprj_6aa1d744bdb4819188d8cf7320cb2418~appgver_ddc1d03c04c08191a3ad17da26620331`) publicada correctamente.
