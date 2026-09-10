@@ -2,14 +2,14 @@
 
 import { ChevronRight, MapPin, Star } from 'lucide-react';
 
-export function MapsReviewButton({ brand, notify, compact = false }: {
+export function MapsReviewButton({ brand, notify, header = false }: {
   brand: string;
   notify: (message: string) => void;
-  compact?: boolean;
+  header?: boolean;
 }) {
   return <button
     type="button"
-    className={'maps-review-button ' + (compact ? 'is-compact' : '')}
+    className={'maps-review-button ' + (header ? 'is-header' : '')}
     onClick={() => notify(`Simulación: se abrirá Google Maps para calificar a ${brand}`)}
     aria-label={`Calificar a ${brand} en Google Maps`}
   >

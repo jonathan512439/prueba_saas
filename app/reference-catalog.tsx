@@ -207,6 +207,7 @@ function ReferenceHome({ rubro, catalog, theme, favorites, cart, onFavorite, not
           </button>
           <button className="reference-cart" onClick={() => go('carrito')} aria-label={'Abrir pedido con ' + cartCount + ' productos'}><ShoppingCart />{cartCount > 0 && <b>{cartCount}</b>}</button>
         </div>
+        <MapsReviewButton brand={rubro.brand} notify={notify} header />
         <label className="reference-search"><Search /><input value={query} onChange={(event) => setQuery(event.target.value)} placeholder={'Buscar en ' + rubro.brand + '...'} />{query && <button onClick={() => setQuery('')} aria-label="Limpiar búsqueda"><X /></button>}</label>
       </header>
 
@@ -229,7 +230,6 @@ function ReferenceHome({ rubro, catalog, theme, favorites, cart, onFavorite, not
           <button className="reference-mini-cart" onClick={() => go('catalogo/' + rubro.id + '/item/' + product.id)} aria-label={'Ver ' + product.name}><ShoppingCart /></button>
         </article>)}</div> : <div className="reference-empty"><Search /><b>No encontramos resultados</b><button onClick={() => setQuery('')}>Limpiar búsqueda</button></div>}
         <button className="reference-feature" onClick={() => notify(theme.feature)}><ShieldCheck /><span><b>{theme.feature}</b><small>Información clara antes de elegir</small></span><ChevronRight /></button>
-        <MapsReviewButton brand={rubro.brand} notify={notify} compact />
       </section>
 
       <ReferenceNav theme={theme} rubro={rubro} />

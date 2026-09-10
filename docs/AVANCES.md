@@ -64,7 +64,7 @@
 
 - Estado: implementada en las portadas de los 45 catálogos.
 - Componente reutilizable: `MapsReviewButton`, compartido por los catálogos personalizados y las vistas genéricas.
-- Ubicación: después del bloque de confianza en los catálogos móviles y antes del listado de productos en los catálogos generales.
+- Ubicación actualizada: integrado directamente en el encabezado de cada negocio; aparece como franja compacta bajo la marca en los catálogos móviles y como acción breve en la barra superior de los catálogos generales.
 - Contenido: icono de ubicación, distintivo de estrella, nombre del negocio, valoración visual y franja inspirada en los colores de Google.
 - Interacción actual: muestra una confirmación simulada con el nombre del negocio; no abre una URL externa.
 - Preparación futura: el controlador puede sustituirse por el enlace específico de Google Maps de cada comercio sin modificar el diseño.
