@@ -101,7 +101,9 @@
 
 ## Fase 4 — Comercio, experiencias, formación y propiedades — 2026-09-10
 
-- Estado: implementada, validada y publicada en GitHub Pages y Sites.
+- Estado: implementada, validada y publicada en GitHub Pages; actualización privada de Sites pendiente por acceso del conector.
+- Commit funcional: 5b6abac (Implement phase 5 catalog experiences).
+- Workflow de Pages: ejecución 34443793209, completada correctamente.
 - Commit funcional: `599d167` (`Implement phase 4 catalog experiences`).
 - Workflow de Pages: ejecución `34440147012`, completada correctamente.
 - Versión privada de Sites: versión 3, desplegada correctamente.
@@ -138,4 +140,6 @@
 - Diseño: ocho identidades cromáticas, cabeceras adaptadas, categorías específicas, dos banners, grilla densa y detalle móvil.
 - Flujos previstos: reserva por fecha para servicios y alquileres; configuración y cotización para impresión; selección de variantes y pedido para óptica, juguetes, deportes y mascotas.
 - Validación: lint, compilación de producción y paquete estático de Pages completados correctamente.
+- Verificación pública: portada, banner de Producción audiovisual y banner de Pet shop responden con HTTP 200.
+- Sites: el manifiesto conserva el proyecto existente, pero el conector actual respondió project_not_found; no se creó otro proyecto para evitar duplicados.
 - Cobertura acumulada: 35 de 45 rubros personalizados; quedan 10.
