@@ -236,7 +236,7 @@
 
 ## Rediseño visible de Veterinaria — 2026-09-10
 
-- Estado: implementada y validada; publicación en curso.
+- Estado: implementada, validada y publicada.
 - Catálogo: Veterinaria / VetCare.
 - Dirección visual: clínica veterinaria moderna, verde profundo y menta, con hero más dominante, tarjetas de atención rápida y productos en formato horizontal.
 - Acciones simuladas añadidas: agendar consulta, urgencias por WhatsApp, ubicación en Maps y consulta del horario.
@@ -244,3 +244,5 @@
 - Patrones: se conserva `CatalogIconPattern` en los 45 catálogos; Veterinaria recibe una opacidad ligeramente mayor sin cubrir productos ni controles.
 - Activos: se mantienen intactos el banner y todas las fotografías existentes.
 - Validación: linter, compilación de producción y paquete estático para GitHub Pages completados sin errores.
+- GitHub: commit funcional `5ae8f3ce02b69ca50c615653fed48be07468e704`; workflow `Deploy GitHub Pages` #34481443431 completado correctamente.
+- Sites: versión privada 7 (`appgprj_6aa1d744bdb4819188d8cf7320cb2418~appgver_05945aad89488191904523e1127bfa93`) publicada correctamente.
